@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="Images/gitprofile-modified.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Periklis Lazarides - Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #818181;
+      color: #ffffff;
+    }
+    header {
+      background-color: #240042;
+      color: #ffffff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      border-bottom: 2px solid #240042;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 400px);
+      gap: 4.4rem; 
+      justify-content: left; 
+    }
+    .project {
+      background: #240042;
+      padding: 1rem;
+      color: #f4f4f4;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+      width: 400px;  
+      height: 400px; 
+      overflow: auto;
+    }
+    .project h3 {
+      margin-top: 0;
+    }
+    .contact p {
+      margin: 0.5rem 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #240042;
+      color: #ffffff;
+    }
+    .project a {
+      color: #007acc;
+      text-decoration: none;
+      align-self: flex-start; /* optional, keeps it on the left */
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns */
+      grid-template-rows: repeat(3, auto);   /* 3 rows */
+      gap: 1rem; 
+      width: 400px; /* optional */
+    }
+
+    .excel-table, .excel-table td {
+      border: 4px solid #240042;
+      border-collapse: collapse;
+      width: 900px;
+      height: 60px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+  </style>
+</head>
+<body>
+  <header> 
+    <img src="Images/gitprofile.png" alt="profile picture" style="width:125px; height:125px; border-radius:50%;">
+    <h1>Periklis Lazarides</h1>
+    <p>Game Developer | Programmer | Game Designer</p>
+  </header>
+
+  <div class="container">
+    <section class="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm a graduate of the <b>Computer Games Programming</b> course at <b>De Montfort University</b>,
+         where I developed a strong foundation in game development, systems programming, and AI-driven gameplay.
+          Throughout my studies, I’ve worked extensively with both Unity and Unreal Engine, building a range of gameplay systems, prototypes, and AI behavior models. <br><br>
+          Currently pursuing Master’s degree in <b>Artificial Intelligence</b>, aiming to deepen my understanding of intelligent systems and apply advanced AI techniques in the context of game development.
+          I'm passionate about creating immersive, systems-driven gameplay experiences and exploring how AI can shape the future of interactive storytelling and opponent behavior.</p>   
+    </section>
+    <h3>Internships:</h3>
+    <p>
+      During Summer of 2025 I have worked as an intern in the research center <b>CYENS Center of Excellence</b> under the team <b>ITICA</b>.
+       ITICA focuses on immersive applications using VR/AR/MR, which allowed me to gain knowledge on this topic and many more.
+    </p>
+
+    <h2>Projects</h2>
+    <section class="projects">
+      <div class="projects">
+
+        <div class="project">
+          <h3>Iron Reign / AI for Fighting Games / Unity</h3>
+          <p>A fighting game I made for my thesis using Unity Engine.
+             The main focus of the project was to develop the CPUs (opponents)
+              of the game using AI techniques like Finite State Machine, Fuzzy State Machine and Deceision Trees.</p>
+          <img src="Images\IRONREIGN.png" style="display:block; margin-top:10px; margin-left:25px; margin-bottom:10px;" width="350" height="200">
+          <a href="#">View Project</a>
+        </div>
+
+        <div class="project">
+          <h3>Spacewalker / Unity</h3>
+          <p>This is a small personal project made in my second year as a student.
+            Spacewalker is inspired by the popular game "Jump Knight", but instead of having a fixed level, it randomly generates obstacles,
+            making it theoretically infinite and give it an "arcade" feel.
+          </p>
+          <img src="Images\SpaceWalker2.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="350" height="200">
+          <!--<img src="Images\SpaceWalker.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="350" height="200">-->
+          <a href="#">View Project</a>
+        </div>
+
+        <div class="project">
+          <h3>CNN and ANN for Classification / Keras</h3>
+          <p>Implemented CNN and ANN using the MNIST-fasion dataset. Aim of the project was to make 
+            2 basic implementations of the models and 2 improved versions to measure their
+            differences in performance.<br><br>
+            This was part of my first module in my Master’s degree (Neural Systems).
+          </p>
+          <a href="#">View Project</a>
+        </div>
+
+        <div class="project">
+          <h3>Dead Aim / Unreal Engine 5</h3>
+          <p>
+            3rd person multiplayer shooter game I made during my second year as a student as a groupwork.<br><br>
+            Multiplayer was possible using the Unreal Engine Steam plugin. Typical 1v1 format, whoever gets 5 kills first wins.
+          </p>
+          <img src="Images\DeadAim.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="350" height="200">
+          <a href="#" target="_blank">View Project</a>
+        </div>
+
+        <div class="project">
+          <h3>Blind Goal Keeper Research Template / Unity</h3>
+          <p>This was one of the main projects I worked during my Internship in CYENS. <br><br>
+            The main goal of the project is to make 2 simulations for goalkeepers. One with a VR environment and one with a video of the real thing.
+             The goal of the player is to predict where the football shooter would shoot the ball. The goal of the research is to compare these two versions,
+             to determine wether training goalkeepers with VR experiences is viable (More detailed explanation in GitHub README section).
+          </p>
+          <img src="Images\BlindGoalKeeper.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="350" height="200">
+          <a href="https://github.com/PeriklisLazarides-dev/BlindGoalKeeper-MentisVR" target="_blank">View Project</a>
+        </div>
+
+        <div class="project">
+          <h3>NPC Guide Tool / Unity</h3>
+          <p>
+            Project I made during my CYENS summer Internship.<br><br>
+            A tool that can be added to a character to automatically make them a "guide" npc. Variables like:
+            audio, text, events on start, events on end, condition to move on, remind the player etc. .
+             Using Unity's scriptable object to construct desired locations/attractions for the guide.
+          </p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+
+        <!-- Add more project cards as needed -->
+      </div>
+    </section>
+<section class="Technical Skills">
+  <h2>Technical Skills</h2>
+  <p>
+      <table class="excel-table">
+    <tr>
+      <td><b>Programming Languages</b></td>
+      <td>C++, C#, Python, JavaScript</td>
+    </tr>
+    <tr>
+      <td><b>Game Development Skills</b></td>
+      <td>Unity, Unreal Engine 5, AI behaviour programming, Shader Programming</td>
+    </tr>
+    <tr>
+      <td><b>Other Technical Strengths</b></td>
+      <td>Version control, Debugging & optimization, Performance profiling, UX/UI design basics</td>
+    </tr>
+    <tr>
+      <td><b>AI & Machine Learning (Current/Future learning)</b></td>
+      <td>Neural Systems (ANN, CNN), GAN, NLP, Evolutionary Algorithms</td>
+    </tr>
+</table>
+  </p>
+</section>
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:periklis.lazarides@gmail.com">periklis.lazarides@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/periklis-lazarides-33a573326/" target="_blank">Periklis Lazarides</a></p>
+      <p>GitHub: <a href="https://github.com/PeriklisLazarides-dev" target="_blank">@PeriklisLazarides-dev</a></p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Periklis Lazarides. All rights reserved.</p>
+  </footer>
+</body>
+</html>
