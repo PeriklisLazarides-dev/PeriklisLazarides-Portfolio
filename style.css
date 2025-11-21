@@ -1,0 +1,101 @@
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d0018;
+      color: #ffffff;
+    }
+    header {
+      background-color: #240042;
+      color: #ffffff;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      border-bottom: 2px solid #240042;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .mods {
+      display: grid;
+      grid-template-columns: repeat(3, 250px);
+      gap: 3.7rem; 
+      justify-content: left; 
+    }
+    .mod {
+      background: #240042;
+      padding: 1rem;
+      color: #f4f4f4;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+      width: 250px;  
+      height: 450px; 
+      overflow: auto;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 400px);
+      gap: 4.4rem; 
+      justify-content: left; 
+    }
+    .project {
+      background: #240042;
+      padding: 1rem;
+      color: #f4f4f4;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+      width: 400px;  
+      height: 400px; 
+      overflow: auto;
+    }
+    .project h3 {
+      margin-top: 0;
+    }
+    .contact p {
+      margin: 0.5rem 0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #240042;
+      color: #ffffff;
+    }
+    .project a {
+      color: #007acc;
+      text-decoration: none;
+      align-self: flex-start; /* optional, keeps it on the left */
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns */
+      grid-template-rows: repeat(3, auto);   /* 3 rows */
+      gap: 1rem; 
+      width: 400px; /* optional */
+    }
+
+    .excel-table, .excel-table td {
+      border: 4px solid #240042;
+      border-collapse: collapse;
+      width: 900px;
+      height: 60px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
