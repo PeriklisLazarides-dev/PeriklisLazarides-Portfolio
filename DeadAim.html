@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="Images/gitprofile-modified.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Periklis Lazarides - Projects\BlindGoalKeeper</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+  <header> 
+    <h1>Dead Aim</h1>
+    <p>Multiplayer 3rd Person Shooter Game (Group Projects) </p>
+  </header>
+
+
+<div class="container">
+    <section class="about">
+        <h2>Description</h2> 
+        <p>A multiplayer 1vs1 third person shooter that the player aims is to be the first to kill the opponent five times. 
+            I worked on the weapon, game loop and character of the game.</p>
+        
+        <h2>Multiplayer</h2>
+        <p>Multiplayer was made with the Steam multiplayer plugin in Unreal Engine 5.</p>
+
+        <h2>Headshot Mechanics</h2>
+
+        <img src="Images/DeadAim/DeadAimBodyShot.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="650" height="400">
+        <img src="Images/DeadAim/DeadAimHeadShot.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="650" height="400">
+
+        <p>Trace hit to the skeletal mesh to get the hit bone and check if it is head.</p>
+
+        <h2>Weapon</h2>
+        <h3>Blueprint</h3>
+        <p>The component class is intended to be the inherited from different weapon that have different statistic and mesh so that making
+             new weapon can be done easily by creating new blueprint class and tweak the values.</p>
+
+        <h3>Replicated VFX & SFX</h3>
+        <p>Used Multicast RPC to spawn sound component and Niagara component on both Client and Host.</p>
+
+        <h3>Fire & Reload</h3>
+        <p>Used Server RPC to ensure only the host has authority to calculate who is hit.</p>
+
+        <h2>Character</h2>
+        <h3>Handle Death</h3>
+
+        <img src="Images/DeadAim/DeadAimDeath.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="650" height="400">
+        <p>When the player character die, a delegate in the health component is broadcast so that callback functions like reset round can be called.</p>
+
+        <h2>Game loop</h2>
+        <h3>Round</h3>
+        <img src="Images/DeadAim/DeadAimBleeding.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="650" height="400">
+
+        <p>Every round has a timer that last for a minute, then when time runs out,
+             the player will receive 10 damage every 0.5 second until one player is dead.
+              If both player die at the same time, both player will receive a point.</p>
+
+
+        <h2>UI</h2>
+        <h3>Main menu includes:</h3>
+        <dl>
+            <li>Host Game</li>
+            <li>Join Game</li>
+            <li>Setting</li>
+            <li>Quit Game</li>
+        </dl>
+
+        <h3>Settings</h3>
+        <dl>
+            <li>Sound Settings</li>
+            <li>Resolution settings (Including Vsync)</li>
+            <li>Window Mode</li>
+            <li>Input Binding</li>
+            <li>Graphics</li>
+        </dl>
+
+        <p>UI and Widgets were made with both with C++ and Blueprint</p>
+        <a href="index.html" class="contact-btn">Back to main page</a>
+    </section>
+</div>
+
+
+</body>
+</html>
