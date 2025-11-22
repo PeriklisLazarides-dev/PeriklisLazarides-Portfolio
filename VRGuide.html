@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="Images/gitprofile-modified.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Periklis Lazarides - Projects\BlindGoalKeeper</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+  <header> 
+    <h1>Guide Script Unity Project</h1>
+    <p>Made by me during my internship at CYENS</p>
+  </header>
+
+<div class="container">
+    <section class="about">
+        <h2>Introduction</h2>
+        <p>
+            This is a script designed to be added to any 3D Unity project as a script for a guide character/NPC controlled by scriptable objects.
+             This project was made by Periklis Lazarides during his summer internship at CYENS. The Scene provided in the project acts as a "demo"
+              of how the guide script can be used.
+        </p>
+        <h2>Prerequisites</h2>
+        <p>Unity 6 (preferably)</p>
+        <h2>How it works</h2>
+
+        <p>Guide script uses a Finite State Machine (FSM). Having 3 different states:</p>
+        <ul>
+            <li>Moving State: The state where the guide moves from one set point to another.</li>
+            <li>Explaining State: The state where the guide arrives at a set point and gives information to the players.</li>
+            <li>Reminder State: The state where the guide makes sure to remind the player of the current objective.</li>
+        </ul>
+        <img src="Images/VRGuideImages/Screenshot 2025-11-22 005138.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="650" height="150">
+        <p>The movement of the Guide is done with the help of "NavMesh Agent" component. This allows the user to make more complex paths for the agent.</p>
+
+    <a href="index.html">Back to main page</a>
+
+    <h2>Installation</h2>
+    <p>To use the script, the user simply needs to drag the "GUIDE" script onto any object and tag it as "Guide".</p>
+
+    <h2>Scriptable Object Features</h2>
+    <ul>
+        <li>Location: The point to set the destination of the Guide.</li>
+        <li>Show Text: Option to show/hide text panel above guide character.</li>
+        <li>Attraction Name/Description: The text that will appear as the title/description when the guide arrives at their destination.</li>
+        <li>Audio Clip: Audio that will play when the guide arrives at their destination.</li>
+    </ul>
+
+    <h3>Events</h3>
+
+    <ul>
+        <li>On Start: When the guide starts moving towards their new destination.</li>
+        <li>On Arrival: When the guide arrives at their set deastination.</li>
+    </ul>
+
+    <h3>Events for changing states/destinations:</h3>
+    <ul>
+        <li>If no custom conditions are given, the guide will move onto their next destination after a certain amount of time set with "No Condition Time Wait".</li>
+        <li>Multiple conditions can be used at the same time</li>
+        <li>Example: Given condition will be called when the guide is at their destination.</li>
+        <li>Can only take in Void functions.</li>
+    </ul>
+    <img src="Images/VRGuideImages/Screenshot 2025-11-22 005143.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="450" height="120">
+
+    <h3>Remind Player Options</h3>
+    <ul>
+        <li>To use this feature, a condition must be inputed in the "On Condition()" field.</li>
+        <li>Remind Player: Choose if you want the player to be reminded. (npc walks towards the player)</li>
+        <li>When to Remind Player: How much time should pass after the guide arrived at their destination and the condition has not been met,
+             for the guide to find the player and remind them.</li>
+        <li>Reminder Wait Time: How much time should the guide stay where the player is before it moves back to the initial destination.</li>
+        <li>Show Text: Option to show/hide reminder text panel.</li>
+        <li>Reminder Title/Description: The text that will appear as the title/description when the guide arrives at the player to remind them.</li>
+    </ul>
+
+    <p>Scriptable object:</p>
+    <img src="Images/VRGuideImages/Screenshot 2025-11-22 005155.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="400" height="600">
+
+    <p>Guide Script:</p>
+    <img src="Images/VRGuideImages/Screenshot 2025-11-22 005159.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="400" height="250">
+
+    <p>(Scriptable objects and scripts have available toolkits for in-Inspector Details)</p>
+    <a href="index.html">Back to main page</a>
+</body>
+</html>
