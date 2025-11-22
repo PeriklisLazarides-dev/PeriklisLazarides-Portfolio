@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="Images/gitprofile-modified.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Periklis Lazarides - Projects\BlindGoalKeeper</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+  <header> 
+    <h1>ANN and CNN for Classification</h1>
+    <p>Project made in my Master's Artificial Intelligence</p>
+  </header>
+
+
+<div class="container">
+    <section class="about">
+        <h2>Main goals of the Project:</h2> 
+        
+        <ul>
+            <li>Compare standard ANN and CNN implementations with the mnist-fashion dataset.</li>
+            <li>Implement improved versions of ANN and CNN and compare their performance with the standard implementation.</li>
+            <li>Successfully make, train and validate each model to achieve the highest accuracy.</li>
+            <li>Test and use different methods for structuring and training the models.</li>
+        </ul>
+
+        <h2>Data Handling</h2>
+        <ul>
+            <li>Compare standard ANN and CNN implementations with the mnist-fashion dataset.</li>
+            <li>Implement improved versions of ANN and CNN and compare their performance with the standard implementation.</li>
+            <li>Successfully make, train and validate each model to achieve the highest accuracy.</li>
+            <li>Test and use different methods for structuring and training the models.</li>
+
+        </ul>
+        <img src="Images/ANNCNN/Picture3.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="150">
+        <img src="Images/ANNCNN/Picture1.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="750" height="300">
+        <img src="Images/ANNCNN/Picture2.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="750" height="300">
+
+        <h2>Artificial Neural Network (ANN)</h2>
+
+        <ul>
+            <li>Structure of the basic ANN includes 4 dense layers and 2 dropout layers. Uses Adam optimiser.</li>
+            <li>Improved ANN uses the same layers but with Batch Normalisation, Early Stopping,
+                 ReduceLROnPlateau and Nadam optimiser. Also, hyperparameter tuning was done for the improved model.</li>
+        </ul>
+
+        <p>Result: Improved ANN performs noticeably better than the basic ANN.</p>
+
+        <img src="Images/ANNCNN/Picture4.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="150">
+        <img src="Images/ANNCNN/Picture5.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="250">
+        <img src="Images/ANNCNN/Picture6.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="750" height="100">
+
+
+        <h2>Convolutionary Neural Network (CNN)</h2>
+
+        <ul>
+            <li>Structure of the basic CNN includes a data augmentation layer, 2 convolution layers,
+                 2 max pooling layers, 2 dense layers and 1 dropout layer. Uses Adam optimiser.</li>
+            <li>Improved CNN uses 4 convolution layers and added Batch Normalisation.
+                 Hyperparameter tuning, Early Stopping and ReduceLPROnPlateau were also implemented. Still using Adam optimiser.</li>
+        </ul>
+
+        <p>Result is that the improved CNN outperforms the basic CNN as well as both ANN and improved ANN models.</p>
+
+        <img src="Images/ANNCNN/Picture7.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="250">
+        <img src="Images/ANNCNN/Picture8.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="400">
+
+        <h2>Results</h2>
+
+        <img src="Images/ANNCNN/Screenshot 2025-11-22 190217.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="1000" height="550">
+        <img src="Images/ANNCNN/Picture9.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="200">
+        
+        <p>Screenshots provided: Confusion Matrices of all models, Loss and Accuracy graphs of all models and the highest numbers achieved during training and validating.</p>
+        <p>Basic CNN and ANN have very similar results around ~89% accuracy while improved ANN reaches ~90% and improved CNN reaching up to ~93% accuracy.</p>
+
+        <h2>Tested methods and changes</h2>
+
+        <ul>
+            <li>Optimiser: Attempted to use different optimisers such as Adamax and SGD with momentum, resulting in the model having less accuracy overall so the changes were removed.</li>
+            <li>Activation Functions: Even though LeakyReLU seemed better on paper, implementing it in the project only affected it negatively.</li>
+            <li>Regularisation: Also failed to improve the accuracy of the model.</li>
+            <li>Kernel Sizes, Filters and Hyper Parameters:Changing them made a huge positive impact on the models and their time for training.</li>
+            <li>Batch Normalisation and Extra Layers:Batch normalization helps stabilize and speed up training by keeping layer activations well-scaled,
+                 improving gradient flow and overall model performance. Extra layers in the model’s structure allowed more overall parameters resulting in more complex and bigger neural networks, 
+                 thus enabling them to be trained at a higher capacity. </li>
+        </ul>
+
+        <h2>Why CNN outperforms ANN?</h2>
+        <p>The results show that while both models performed well on the MNIST dataset, 
+            the CNN achieved higher accuracy and better generalization than the ANN.
+             This is because CNNs can automatically learn spatial features and patterns from the images,
+              whereas ANNs treat each pixel independently. However, the CNN required more computational 
+              resources and longer training time. Overall, this comparison highlights the trade-off
+               between model complexity and performance in image classification tasks.</p>
+
+
+
+        <h2>Extra Inovation</h2>
+        <p>Using a different dataset with human faces that show emotions, I was able to train a CNN and take pictures of my self with a camera to test the models accuracy.</p>
+        <a href="index.html" class="contact-btn">Back to main page</a>
+    </section>
+</div>
+
+
+</body>
+</html>
