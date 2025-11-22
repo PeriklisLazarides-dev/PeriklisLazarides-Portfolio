@@ -114,9 +114,16 @@
 
     .contact-btn:hover {
       background-color: #632fd1; /* darker purple on hover */
-      transform: translateY(-2px);
     }
 
     .contact-btn:active {
       transform: translateY(0);
+    }
+    .centered-text {
+      text-align: center;
+    }
+    .center-box {
+      display: flex;
+      justify-content: center;
+      align-items: center; /* Optional: vertical centering */
     }
