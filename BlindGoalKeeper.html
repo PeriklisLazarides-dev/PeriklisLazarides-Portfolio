@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="Images/gitprofile-modified.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Periklis Lazarides - Projects\BlindGoalKeeper</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+  <header> 
+    <img src="Images/gitprofile.png" alt="profile picture" style="width:125px; height:125px; border-radius:50%;">
+    <h1>Periklis Lazarides</h1>
+    <p>Game Developer | Programmer | Game Designer</p>
+  </header>
+
+<div class="container">
+    <section class="about">
+      <h1>Blind Goal Keeper Project</h1>
+      <h2>introduction</h2>
+      <p>This Project was made for researching people's choices/reflexes in VR and Real life to see the differemce if any. 3 version of the project were made.
+        <ul>
+            <li>VR research version (main branch)</li>
+            <li>Video research version (videoversion branch)</li>
+            <li>Game version (gameversion branch)</li><br>
+        
+        </ul>
+This project was made by Periklis Lazarides during his summer internship at CYENS. <u>All the versions act as prototypes</u>.
+
+        </p>
+    </section>
+    
+    <h2>Prerequisites</h2>
+    <p>Unity version 2022.3.29</p>
+
+    <h2>Proccess of the experiment</h2>
+    
+    <p>       
+        The reaserch version are design for a researcher to setup the options and a goalkeeper that will be taking on the experiment,
+        game version is supposed to be a single person experience.
+
+        <ul>
+            <li>Upon entering the project, the first step is to input all of the details needed and options.</li>
+            <li>Next there is an option to play a preview of the options the user has selected to see if they want to keep them or change them. (Data in this preview are not saved)</li>
+            <li>When pressing start an animation/video will play. Just before the shooter touches the ball, the screen to predict is prompted.</li>
+        </ul>
+
+        <img src="Images\BlindGoalKeeper.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="650" height="400">
+        <img src="Images/BlindGoalKeeperProjectImages/Screenshot 2025-11-22 000630.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="650" height="400">
+
+        After all of the attempts, the user can either restart or quit.<br><br>
+    </p>
+
+    <h2>How it works</h2>
+
+    <p>
+        The 2 research version are made to save data within .csv files for later experimentning and reviewing.
+         On the other hand, the game version saves the current data to a .json file for it to later be uploaded on the server.<br><br>
+
+         Animations and videos are not imported yet by the time that this documentation is made.
+          Game Version and VR research version are meant to be played with VR devices.<br><br>
+
+          About the in-game options/save data:
+
+          <ul>
+            <li>ID/Name: The name/ID of the user.</li>
+            <li>Gender: The gender of the user.</li>
+            <li>Age: The age of the user. (These 3 inputs are only available in the research versions, game version will collect that data automatically)</li>
+            <li>Number of Iterations: How many attempts to make</li>
+            <li>Number of Sets: How many sets, of set attempts to make Example: Number of Iterations = 2 Number of Sets = 3, 2x3 = 6 total attempts.
+                 Betweeen each set there is a "break" for the user, a continue button is then promted. Tutorial settings act as the same, just for the preview.</li>
+            <li>Reaction Time Limit: How much time to give to the user to answer. This can be used to test reflexes and fast decision making.</li>
+            <li>Show Answers: After each guess, show the correct answer.</li>
+          </ul>
+    </p>
+
+    <h2>Saving Format</h2>
+    <img src="Images/BlindGoalKeeperProjectImages/Screenshot 2025-11-22 000638.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="750" height="120">
+    <p>(CSV only in research versions)</p>
+    <img src="Images/BlindGoalKeeperProjectImages/Screenshot 2025-11-22 000722.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="750" height="500">
+    <p>(JSON format)</p>
+
+    <h2>How animations and positions are setup</h2>
+    <img src="Images/BlindGoalKeeperProjectImages/Screenshot 2025-11-22 000746.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="700" height="1000">
+    <p>Number of Shoots: How many positions the researcher is going to input.
+         Position Names: (Valid positions are the 9 listed) Animation/Video Clips:
+          The corresponding amount of animations/videos used.
+    </p>
+    <img src="Images/BlindGoalKeeperProjectImages/Screenshot 2025-11-22 000803.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px;" width="700" height="200">
+    <p>Pairing each animation/video with their position and randomising the array of pairs.
+         Example: Element 0 of the array (before random) is Punch1 - Top left.
+          Meaning when that certain animation is played the correct answer will be Top Left This will be setup by the experimenters.
+          <br><br>
+          Of course animations will be imported with correct names, ideal quality and predetermined position results that will be imported from the developers.
+          <br><br>
+          Just by adding the animations and their corresponding positions, the scripts will take care of them.
+          <br><br>
+          Example: if the number of Sets x Iterations is greater than the amouunt of animations imported,
+           the array will just repeat (as requested). This ensures that if this is not the case, each animation will be only played once.
+    </p>
+
+    <a href="index.html" target="_blank">Back to main page</a>
+</body>
+</html>
