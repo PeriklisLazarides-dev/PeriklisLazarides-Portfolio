@@ -46,7 +46,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
       width: 250px;  
-      height: 450px; 
+      height: 500px; 
       overflow: auto;
     }
     .projects {
@@ -63,7 +63,7 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
       width: 400px;  
-      height: 400px; 
+      height: 430px; 
       overflow: auto;
     }
     .project h3 {
@@ -78,7 +78,7 @@
       background-color: #240042;
       color: #ffffff;
     }
-    .project a {
+    a {
       color: #007acc;
       text-decoration: none;
       align-self: flex-start; /* optional, keeps it on the left */
@@ -98,4 +98,25 @@
       height: 60px;
       text-align: center;
       font-size: 1.1rem;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background-color: #7b3fff; /* purple */
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .contact-btn:hover {
+      background-color: #632fd1; /* darker purple on hover */
+      transform: translateY(-2px);
+    }
+
+    .contact-btn:active {
+      transform: translateY(0);
     }
