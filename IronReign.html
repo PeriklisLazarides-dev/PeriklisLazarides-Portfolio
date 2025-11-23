@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="Images/gitprofile-modified.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Periklis Lazarides - Projects\BlindGoalKeeper</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+  <header> 
+    <h1>Iron Reign</h1>
+    <p>AI for Fighting Games</p>
+
+    <div class="center-box">
+      <p>
+      <a href="#Introduction">Introduction</a> |
+      <a href="#Game/Project Overview">Game/Project Overview</a> |
+      <a href="#Objectives of the Project">Objectives of the Project</a> |
+      <a href="#Characters">Characters</a> |
+      <a href="#Attack/Defence System">Attack/Defence System</a> |  
+      <a href="#Ingame UI and Stage">Ingame UI and Stage</a> |  
+      <a href="#Audio and Menus">Audio and Menus</a> |  
+      <a href="#Duel Configurations">Duel Configurations</a> | 
+      <a href="#AI CPUs">AI CPUs</a> | 
+      <a href="#Input Device/Controls">Input Device/Controls</a> | 
+      <a href="#Testing and Development">Testing and Development</a> | 
+      <a href="#Critical Reflection">Critical Reflection</a> | 
+      <a href="#Conclusion/Potential Future Updates">Conclusion/Potential Future Updates</a> 
+      
+      </p>
+    </div>
+
+  </header>
+
+
+<div class="container">
+    <section class="about">
+        <div id="Introduction"></div>
+        <h2>Introduction</h2> 
+    <p>
+        "Iron Reign" was my thesis project for my undergraduate degree in Computer Games Programming.
+         This is by far <u>my favourite and most complex project</u> that I have ever done. Coming from a fighting game backround myself,
+         it was really fun to figure out how to implement the fighting game mechanics on my own.<br><br> I <b>love</b> this project, and <u>it is the most
+         fun I have had working on something</u>.
+
+         <br><br>
+         I had 8 weeks to make this project, a Technical Design Document (TDD), a Game Design Document (GDD) and a presentation. All assets are original and created by me using Aseprite.
+         <img src="Images/IronReign/Screenshot 2025-11-23 160031.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+    </p>
+    <div id="Game/Project Overview"></div>
+    <h2>Game/Project Overview</h2>
+    <p>
+        Iron Reign is a traditional, ground based 2D Fighting game inspired from popular fighting game titles such as "Tekken" and "Street Fighter".
+        <br><br>
+        The main goal of this project was to develop a fighting game environment where CPUs (AI opponents) could be developed using various AI techniques,
+         that could play the game in a realistic way.
+         <br><br>
+         Engine: <b>Unity Engine</b>
+
+         <img src="Images/IRONREIGN.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+    </p>
+
+    <div id="Objectives of the Project"></div>
+    <h2>Objectives of the Project</h2>
+    <p>
+        <ul>
+            <li>Make a simple fighting game.</li>
+            <li>Enemy AI: demonstrating AI techniques used in Fighting Games.</li>
+            <li>Implementation of HP system that is used by the AI systems.</li>
+            <li>Implement Attack/Defence System to be used by CPU and player.</li>
+            <li>Minimalistic UI elements, for basic understanding of the gameplay.</li>
+            <li>Inputs: compatible across several input devices.</li>
+            <li>Audio: suitable soundtrack and sound effects for a fighting game.</li>
+
+        </ul>
+    </p>
+
+    <div id="Characters"></div>
+    <h2>Characters</h2>
+    <p>This game features the base character type of a fighting game, 
+        a balanced character that represents the game fundamentals through their moveset. 
+        Meaning players and CPUs use the same character type. Each CPU variation is done with a 
+        different AI technique and a different approach in gameplay.</p>
+    <img src="Images/IronReign/image23.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+
+    <div id="Attack/Defence System"></div>
+    <h2>Attack/Defence System</h2>
+    <p>
+        Attacks were implemented by enabling and disabling the hitboxes/colliders
+         from the animation events in Unity. Calculations such as, damage, knockback and others are done within scripts.
+        <br><br>
+        All the moves in the game have different uses, strengths and weaknesses. 
+        Punches in Iron Reign generally have less range but less risk, while kicks have more range but are riskier to use.
+        <br><br>
+        When blocking a move, the character can act before the attacker, making some moves vulnerable to counter attacks
+        <br><br>
+        Iron Reign features a "High/Mid/Low System".
+        
+            <h3>Punch1: High<br><br></h3>
+            <img src="Images/IronReign/image24.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="150" height="150">
+                Fast Attack designed to check opponents and apply preassure. Can start combos if the opponent is in close range.
+                 If blocked, the opponent can act slightley faster than the attacker, but it is tricky.
+                Although it is fast, the opponent can crouch/duck under it to evade it, giving them a chance to counter attack. Decent range.<br><br>
+
+            <h3>Punch2: Mid</h3>
+            <img src="Images/IronReign/image25.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="150" height="150">
+            Not very fast, not very slow. Unlike Punch1, Punch 2 is designed to check the opponent when they are ducking/crouching.
+             Mid hitting moves require the player to be standing to succesfully block the move. Very poor range but high damage.
+             If it is blocked the opponent can act faster than the attacker. Can be a combo ender (ex. Punch1 -> Punch1 -> Punch2)
+
+            <h3>Kick1: Low</h3>
+            <img src="Images/IronReign/image26.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="200" height="150">
+            The only "Low" hitting move in the game. To block this move, the defending player has to hold down/downback to succesfully block the move. If blocked,
+            the defender has enough time to counter attack the attacker with whatever move they want. The attack comes out at a time that is barely reactable.
+            If the players are concentrated enough, it can be blocked consistenlty. Another propery of the move is that it "ducks/crouches", meaning that it can
+            evade "High" hitting moves (ex. Punch1). Good range.
+
+            <h3>Kick2: Mid</h3>
+            <img src="Images/IronReign/image27.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="200" height="150">
+            The strongest hitting move in the game. Has the most range and highest attacking power. Of course, the trade-off is that it can be easily countered if the
+            defender succesfully blocks the move. It is however a "Mid" hitting move, so it cannot be evaded in any way and has to be blocked. Can be used as
+            a zoning tool to keep the opponent away, a counter-attacking move and can outrange all other moves. Players need to be extremely cautious and selective to use this move.
+            Very good range, slow startup.
+
+            <h3>Iron Reign: Special Ability/Buff</h3>
+            <img src="Images/IronReign/image28.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="150" height="150">
+            Iron Reign Special ability is designed to grant the user "damage on block", meaning that if the opponent blocks succesfully a move, they will take up to 50% of the
+            moves damage. Of course the buff is not active for a long time and acts as a temporary aggressive buff. When using the ability, the user is vulnerable to incoming attacks
+            so players need to activate it in a reasonable moment.
+    </p>
+
+
+    <h3>Footsies Implementation</h3>
+    "Footsies", as the fighting game community describes, is the state of the game where no player has an advantage, also called neutral. In this state of the game,
+    players are trying to find opening that are created with precise movement and timing.<br><br>
+    To deepen this concept, I made the 2 kicking moves extend the attackers hitbox, resulting in the opponent having a chance to hit the attackers leg during their animation.
+    This tiny detail adds a lot more complexity to the neutral state of the game.
+
+    <div id="Ingame UI and Stage"></div>
+    <h2>Ingame UI and Stage</h2>
+    Typical In-game fighting game UI. Made using the canvas feature in Unity,
+     the UI includes the health bars of the characters, round timer and the special ability meter.
+    <img src="Images/IronReign/Picture1.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+    <br><br>
+    Special ability meter is active for 10 seconds while the bar depletes and flashes to indicate the buff being active.
+    <img src="Images/IronReign/image31.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="500">
+
+    <h3>Stage Hazard and Camera Movement</h3>
+    At the edges of the stage, special tiles called “Deadzones” are placed. 
+    Being on them makes your character take more damage (2x) from any source of damage and some attacks can even become lethal on hit (kick2).
+    Health UI changes to Red to indicate that the player is in danger.
+    Traditional fighting game camera moving smoothly and scaling depending on the distance of the characters.
+    <img src="Images/IronReign/Picture4.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+
+    <div id="Audio and Menus"></div>
+    <h2>Audio and Menus</h2>
+    Very simple and easy to understand UI menus.
+    Standard Fighting Game sounds like blocking/hitting, announcer etc. Music was AI generated using Udio. Free sound effects from freesound.
+    <br><br>
+    Audio menu fetures master, music and SFX sliders.
+    <img src="Images/IronReign/Picture5.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="300" height="300">
+    Controls menu acts as a guide on how to play and explaining some key features of the game/game mechanics.
+    <img src="Images/IronReign/Picture7.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+    <br><br>
+
+    <div id="Duel Configurations"></div>
+    <h2>Duel Configurations</h2>
+    Character selection sceen allows:
+    <ul> 
+        <li>Player vs CPU</li>
+        <li>Player vs Player</li>
+        <li>CPU vs CPU</li>
+    </ul>
+
+    Player and CPU scripts are independant on each other giving us the opportunity to have CPUs fight against each other.
+    <br><br>
+
+    <div id="AI CPUs"></div>
+    <h2>AI CPUs</h2>
+    Iron Reign Prototype features 4 different types of CPU. Each CPU has a different playstyle and difficulty.<br><br>
+    FSM CPU: Standard Implementation of a Finite State Machine. The “base” template of the CPUs. Basic and kind of random gameplay.
+    <img src="Images/IronReign/Picture8.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="180" height="200"><br><br>
+    FuSM CPU: Fuzzy State Machine implementation. Plays Offence and Defence depending on the amount of health it has, and how much time has passed since it got hit.
+    <img src="Images/IronReign/Picture9.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="180" height="200"><br><br>
+    DT CPU: Finite State Machine + Decision Trees. A more advanced approach for optimal gameplay. Plays around timing, spacing and remaining health.
+    <img src="Images/IronReign/Picture10.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="180" height="200"><br><br>
+    DT2.0 CPU: Same as DT CPU but it can pick up habits from opponents and adapt in those situations with the best counterattack.
+    <img src="Images/IronReign/Picture11.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="180" height="200"><br><br>
+
+    <div id="CPU States"></div>
+    <h3>CPU States</h3>
+    All 4 CPUs use 4 different states:
+    <ul>
+        <li>Approach State</li>
+        <li>Attack State</li>
+        <li>Retreat State</li>
+        <li>Defence State</li>
+    </ul>
+    The approach to develop these states was: Approach State->Attack State->Retreat State->Defence State.<br><br>
+
+    Defence State is by far the most complex state and the one that needed the most time to develop. Defence state includes proper blocking, movement and counterattacking which can be tricky to balance for gameplay.
+    <br>Scrips are from DT2.0 CPU
+
+    <div id="Input Device/Controls"></div>
+    <h2>Input Device/Controls</h2>
+    Iron reign has many compatible input devices that were setup using Unity’s new input system.
+    UI and Gameplay can be controlled with:
+    <ul>
+        <li>Keyboards</li>
+        <li>Traditional controllers (Xbox, PlayStation etc.)</li>
+        <li>Arcade Sticks/Leverless Arcade Sticks</li>
+    </ul>
+    Player vs Player is only available when 2 input devices are connected.
+    Input Buffering is implemented for smoother gameplay and combo execution
+
+
+    <div id="Testing and Development"></div>
+    <h2>Testing and Development</h2>
+    To achieve this state of the game I followed these steps:
+    <ul>
+        <li>Make necessary sprites.</li>
+        <li>Make the game template, meaning a fully playable fighting game environment.</li>
+        <li>Develop the first CPU (FSM).</li>
+        <li>Make it feel more like a game by adding menus, audio etc.</li>
+        <li>Develop the other CPU with different and more advanced techniques.</li>
+        <li>Polish the game and fix as many bugs as possible.</li>
+    </ul>
+
+    For the testing of the CPU gameplay, I have personally played against all the CPU and spectated countless round of CPU vs CPU to try and find unwanted/weird behaviours.<br><br>
+    Also got feedback by people who have played my game and ideas that I could consider developing.<br><br>
+    Version control was managed using GitHub. Used Unity Engine 2022.3.29 to match the version in the labs.
+
+    <div id="Critical Reflection"></div>
+    <h2>Critical Reflection</h2>
+    All the goals were achieved and some exceeded:
+    <ul>
+        <li>Make a simple fighting game: Made extra mechanics to make the game more complex.</li>
+        <li>Make Attack/Defence system: Special ability granting more damage and damage on block</li>
+        <li>Enemy AI: Made advanced versions that can adapt to the opponent’s habits.</li>
+        <li>Input Compatibility: All controllers are usable and added Player vs Player</li>
+        <li>Minimalistic UI: Made more menus to make it feel more like a game.</li>
+        <li>Audio: Fitting sounds and music.</li>
+        <li>Health System: Basic health system and added chip damage (on block damage)</li>
+    </ul>
+
+    <div id="Conclusion/Potential Future Updates"></div>
+    <h2>Conclusion/Potential Future Updates</h2>
+    For the future of this game, I would add:
+    <ul>
+        <li>More character archetypes (ex. Rush-down, poking, zoners etc.). </li>
+        <li>Add more unique moves and concepts such as projectiles and special abilities depending on the character.</li>
+        <li>Make CPUs specifically designed to play the other archetypes with unique gameplans.</li>
+        <li>More unique stages and soundtracks</li>
+    </ul>
+    Things I would do differently now that I have experience on fighting game development:
+    <ul>
+        <li>Change my approach on how the main core mechanics are implemented such frame data, blocking and getting hit.</li>
+    </ul>
+
+    <h3>Conclusion</h3>
+    <p>I am very satisfied with the result of the project and had a lot of fun making it.
+    It is not hard to make AI for fighting games to play perfectly, it is hard to make them play realistically.</p> 
+
+
+
+        <a href="index.html" class="contact-btn">Back to main page</a>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Periklis Lazarides. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
