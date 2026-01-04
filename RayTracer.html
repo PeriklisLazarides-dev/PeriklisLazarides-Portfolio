@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="Images/gitprofile-modified.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Periklis Lazarides - Projects\BlindGoalKeeper</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+  <header> 
+    <h1>Ray Tracer</h1>
+    <p>Personal Project</p>
+  </header>
+<div class="container">
+    <section class="about">
+        <h2>Inroduction</h2>
+        <p>
+            This Ray Tracer was a side/personal project I made during my Master’s degree (unrelated subject).<br><br> 
+            A C++ ray tracer rendering spheres and a checkered floor with realistic lighting and reflections.
+        </p>  
+
+            <h2>Goal of the Project</h2>
+            <p>
+                The main goal of this project was to deepen my understanding of computer graphics and rendering techniques by implementing a basic ray tracing algorithm from scratch.
+            In my first year of my Bachelor's degree I had a subject on ray tracing. We made a super simple ray tracer in JS/HTML that could render spheres with basic colours and lighting.
+            This project was an opportunity to revisit and expand upon those concepts, exploring more advanced features and optimizations.
+                
+            </p>
+            <img src="Images/RayTracerOutput.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="500">
+
+            <h3>Why did I want to make a Ray Tracer?</h3>
+            <p>
+                Making a ray tracer during my Master’s degree sounds counter intuitive as it is unrelated to my field of study. However,
+                 I have always been fascinated by computer graphics and rendering techniques. 
+                 <br><br>
+                 And of course it looks super cool to see a program you made render realistic images from scratch.
+            </p>
+
+            <h2>Structure</h2>
+            <p>
+                Using C++, I structured the ray tracer into several key components:
+                <ul>
+                    <li><strong>Vector and Ray Classes:</strong> Fundamental classes to represent 3D vectors and rays in space. Overloaded operators for vector math operations.</li>
+                    <li><strong>Sphere Class:</strong> A class to represent spheres, including position, colour, size and reflectiveness. This allows me to define and manipulate spheres in the scene easily.</li>
+                    <li><strong>Rendering Loop:</strong> The main loop that casts rays from the camera through each pixel, calculates color based on intersections, lighting, and reflections, and outputs the final image.</li>
+                    <li><strong>PPM Output:</strong> Outputing all pixel colours in a ppm file format and viewing it from an online ppm viewer.</li>
+                </ul>
+            </p>
+
+        <h2>Key Features</h2>
+        <p>
+            <ul>
+                <li><strong>Gamma-corrected output for accurate colors:</strong> Gamma correction ensures that the colors in the final image are displayed accurately on different monitors and devices.</li>
+                <li><strong>Anti-aliasing via multiple rays per pixel (SPP):</strong> This one feature allowed me to make the output look much smoother and super high quality.
+                    By averaging the colors from multiple rays per pixel, the jagged edges and noise are significantly reduced, resulting in a cleaner and more visually appealing image.
+                    The only downside is that it increases the rendering time proportionally to the number of samples per pixel (100 rays per pixel).
+                </li>
+                <li><strong>Procedural checkered floor: </strong>Adding a procedural checkered floor to the scene gave a better visual appearance to the scene and a clearer sense of depth.</li>
+                <li><strong>Diffuse lighting with shadows:</strong> This feature allows for realistic shading and depth perception in the rendered scene.</li>
+                <li><strong>Recursive reflections on spheres and floor:</strong> Once I added recursive reflections, the scene instantly looked more realistic and visually appealing.
+                At the moment, the reflections are limited to a maximum depth of 3 to avoid infinite recursion.</li>
+            </ul>
+        </p>
+
+        <h2>Possible Future Improvements</h2>
+        <p>
+            <ul>
+                <li>Glossy / blurry reflections.</li>
+                <li>Refraction & transparent materials.</li>
+                <li>Multiple lights & light types.</li>
+                <li>Enhanced anti-aliasing (stratified/jittered sampling)</li>
+                <li>Texture mapping on spheres and planes</li>
+                <li>More complex objects (triangles, meshes, OBJ support)</li>
+                <li>Global illumination / path tracing</li>
+                <li>Camera effects (depth of field, motion blur, adjustable FOV)</li>
+                <li>Optimizations & performance (BVH, multithreading, GPU acceleration)</li>
+                <li>User controls / interactive scene</li>
+                <li>Post-processing effects (tone mapping, exposure, bloom)</li>
+                <li>Improved class structures</li>
+
+            </ul>
+        </p>
+
+        <a href="index.html" class="contact-btn">Back to main page</a>
+         
+    </section>
+</div>
+  
+<footer>
+    <p>&copy; 2025 Periklis Lazarides. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
