@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="Images/gitprofile-modified.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Periklis Lazarides - Shader Programming</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+  <header> 
+    <h1>Shader Programming</h1>
+    <p>3rd Year Module</p>
+
+    <div class="center-box">
+      <p>
+      <a href="#Introduction">Introduction</a> |
+      <a href="#Project Structure and Implemented features">Project Structure and Implemented features</a> |
+      <a href="#Deferred Rendering & Lighting">Deferred Rendering & Lighting</a> |
+      <a href="#Shadow Mapping">Shadow Mapping</a> |
+      <a href="#GPU Compute Shader Features">GPU Compute Shader Features</a> |  
+      <a href="#Tessellation & Geometry Shaders">Tessellation & Geometry Shaders</a> |  
+      <a href="#Post-Processing Effects">Post-Processing Effects</a> |  
+      <a href="#Procedural Content & Materials">Procedural Content & Materials</a> | 
+      <a href="#Geometry, Models & Effects">Geometry, Models & Effects</a> | 
+      <a href="#Real-Time Debugging & Tools">Real-Time Debugging & Tools</a> | 
+      <a href="#Interaction & Runtime Control">Interaction & Runtime Control</a> | 
+      <a href="#Summary">Summary</a> 
+      
+      </p>
+    </div>
+
+  </header>
+<div class="container">
+    <section class="about">
+        <div id="Introduction"></div>
+        <h2>Introduction</h2>
+        <p>
+            "Advanced Shader Programming" was a module I took during the third year of my undergraduate degree. <br><br>
+            The main focus of this module was to learn about shader programming using GLSL (OpenGL Shading Language)
+            ,how to create various visual effects in real-time graphics applications and how to optimise the rendering pipeline and scene.
+        </p>  
+        <div id="Project Structure and Implemented features"></div>
+            <h2>Project Structure and Implemented features</h2>
+            <p>
+                Using C++ and OpenGL, my tutors provided a basic framework to start from. From there, I implemented various features including:
+
+                <div id="Deferred Rendering & Lighting"></div>
+                <h3>Deferred Rendering & Lighting:</h3>
+                <ul>
+                    <li>Implemented a deferred shading workflow using a G-buffer (position, normal, albedo, depth)</li>
+                    <li>Authored a Physically Based Rendering (PBR) lighting model (Metallic–roughness workflow, Fresnel-Schlick reflectance approximation)</li>
+                    <li>Implemented directional lighting with shadow mapping</li>
+                    <li>Added multiple dynamic point lights (Runtime-adjustable color, position, and attenuation)</li>
+                    <li>Integrated skybox lighting into the lighting pass</li>
+                </ul>
+
+                <div id="Shadow Mapping"></div>
+                <h3>Shadow Mapping:</h3>
+                <ul>
+                    <li>Implemented directional shadow mapping (Orthographic light-space projection and configurable shadow bias)</li>
+                    <li>Authored a shadow depth pre-pass</li>
+                    <li>Implemented shadow map debugging and visualization</li>
+                    <li>Enabled live shadow updates when light direction changes</li>
+                </ul>
+
+                <div id="GPU Compute Shader Features"></div>
+                <h3>GPU Compute Shader Features:</h3>
+                <ul>
+                    <li>Wrote compute shaders for procedural noise generation(Frequency, amplitude, lacunarity, persistence, octave control)</li>
+                    <li>Implemented heightmap-to-normal conversion using Central Difference Method (CDM)</li>
+                    <li>Implemented depth-based fog using compute shaders</li>
+                    <li>Managed image load/store bindings and GPU memory barriers</li>
+                </ul>
+
+                <div id="Tessellation & Geometry Shaders"></div>
+                <h3>Tessellation & Geometry Shaders:</h3>
+                <ul>
+                    <li>Implemented GPU tessellated terrain(Tessellation Control & Evaluation shaders)</li>
+                    <li>Added runtime tessellation level control</li>
+                    <li>Implemented multiple normal calculation modes(Vertex normals, CDM normals)</li>
+                    <li>Used geometry shaders for: Terrain processingBillboard expansion</li>
+                </ul>
+
+                <div id="Post-Processing Effects"></div>
+                <h3>Post-Processing Effects:</h3>
+                <ul>
+                    <li>Implemented multiple screen-space post-processing effects (Color inversion, Gaussian blur, Edge detection)</li>
+                    <li>Implemented HDR tone mapping operators (ACES, Uncharted, Reinhard)</li>
+                    <li>Implemented depth-aware fog compositing</li>
+                    <li>Enabled runtime post-processing switching</li>
+                </ul>
+
+                <div id="Procedural Content & Materials"></div>
+                <h3>Procedural Content & Materials:</h3>
+                <ul>
+                    <li>Implemented procedural terrain generation (Compute-generated heightmaps, Texture blending (grass / rock))</li>
+                    <li>Integrated procedural noise textures directly into tessellated geometry</li>
+                    <li>Implemented normal mapping using both texture-based and compute-generated normals</li>
+                </ul>
+
+                <div id="Geometry, Models & Effects"></div>
+                <h3>Geometry, Models & Effects:</h3>
+                <ul>
+                    <li>Integrated normal-mapped character rendering</li>
+                    <li>Implemented billboard rendering using geometry shaders</li>
+                    <li>Populated scenes with procedurally placed instances</li>
+                    <li>Implemented multi-texture material setups</li>
+                </ul>
+
+                <div id="Real-Time Debugging & Tools"></div>
+                <h3>Real-Time Debugging & Tools</h3>
+                <ul>
+                    <li>Built an ImGui-based editor/debug UI (G-buffer visualization, Shadow map inspection, Noise texture previews, 
+                        Defferred rendering view)</li>
+                    <li>Added real-time parameter tweaking for: Lighting, Shadows, Tessellation, Noise generation, PBR material properties, Post-processing effects</li>
+                    <li>Used RenderDoc for frame capture and shader debugging</li>
+                </ul>
+
+                <div id="Interaction & Runtime Control"></div>
+                <h3>Interaction & Runtime Control:</h3>
+                <ul>
+                    <li>Added wireframe rendering toggle</li>
+                    <li>Enabled live scene and lighting manipulation</li>
+                </ul>
+
+                <div id="Summary"></div>
+                <h2>Summary</h2>
+                <h3>Technical Skills Demonstrated</h3>
+
+                <ul>
+                    <li>Advanced GLSL shader programming (Vertex, Fragment, Geometry, Tessellation, Compute)</li>
+                    <li>Physically Based Rendering (PBR)</li>
+                    <li>Deferred shading techniques</li>
+                    <li>GPU compute workflows</li>
+                    <li>Procedural content generation</li>
+                    <li>Real-time graphics debugging tools</li>
+                    <li>Debugging with RenderDoc</li>
+                </ul>
+            </p>
+
+       
+        <a href="index.html" class="contact-btn">Back to main page</a>
+         
+    </section>
+</div>
+  
+<footer>
+    <p>&copy; 2025 Periklis Lazarides. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
