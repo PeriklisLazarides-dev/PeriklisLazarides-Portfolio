@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="Images/gitprofile-modified.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Periklis Lazarides - Vulkan Renderer</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+  <header> 
+    <h1>Vulkan Renderer</h1>
+    <p>Personal Project (Still in development)</p>
+
+    <div class="center-box">
+      <p>
+      <a href="#Introduction">Introduction</a> |
+      <a href="#Project Structure and Implemented features">Project Structure and Implemented features</a> |
+      <a href="#Engine Structure">Engine Structure</a> |
+      <a href="#Engine Implementation Features">Engine Implementation Features</a> |
+      <a href="#Shader Stages">Shader Stage / Features</a> |  
+      <a href="#Shader Implementations">Shader Implementations</a> |  
+      <a href="#Summary">Summary</a> |  
+      <a href="#Future Goals">Future Goals</a> 
+      
+      </p>
+    </div>
+
+  </header>
+<div class="container">
+    <section class="about">
+        <div id="Introduction"></div>
+        <h2>Introduction</h2>
+        <p>
+            The Vulkan Renderer is a personal project developed during my Master's. <br><br>
+            The main focus of the project is to learn the Vulkan API,
+            gain a better understanding of rendering at a low level and improve my C++ skills.
+            <br><br>
+            Another focus is for me to be able to read and understand the vulkan documentation to be able 
+            to implement my own features in the renderer and hopefully use this in my thesis project in Master's.
+        </p>  
+        <div id="Project Structure and Implemented features"></div>
+            <h2>Project Structure and Implemented features</h2>
+            <p>
+                Using C++ and the Vulkan API,
+                I have implemented various graphics and optimisation features. The base of the renderer was made with
+                the help of the Vulkan tutorial. Other features were implemented completely by me using the Vulkan Official 
+                Documentation.
+
+                <div id="Libraries / Extensions"></div>
+                <h3>Libraries / Extensions:</h3>
+                <ul>
+                    <li>Vulkan SDK/Library</li>
+                    <li>GLFW / Window Creation</li>
+                    <li>GLM / Vectors and Matrices</li>
+                    <li>SPDLOG / Better debugging and logging</li>
+                    <li>IMGUI / Imgui window</li>
+                    <li>TINYOBJLOADER / Loading .obj models</li>
+                </ul>
+                
+                Using Cmake for building the project.
+
+                <div id="Engine Structure"></div>
+                <h3>Engine Structure:</h3>
+                <ul>
+                    <li>Vulkan Instance</li>
+                    <li>Physical Device / GPU</li>
+                    <li>Logical Device</li>
+                    <li>Host / CPU</li>
+                    <li>Swap Chain</li>
+                    <li>Dynamic Rendering</li>
+                   
+                </ul>
+                    Added <b>Dynamic Rendering</b> to replace the old way of using renderpasses and framebuffers, allowing 
+                    for a more intuitive, efficient and flexible implementation. (Only possible in Vulkan 1.3+)
+
+
+                <div id="Engine Implementation Features"></div>
+                <h3>Engine Implementation Features:</h3>
+                <ul>
+                    <li>Dynamic Window resizing</li>
+                    <li>Vertex / Index / Staging / Uniform Buffers</li>
+                    <li>Push Constants</li>
+                    <li>Descriptors</li>
+
+                </ul>
+
+                <div id="Shader Stages"></div>
+                <h3>Shader Stage / Features:</h3>
+                <ul>
+                    <li>Vertex Shader</li>
+                    <li>Fragment Shader</li>
+                </ul>           
+                    <p>Future Shader Implementations:</p>
+                <ul>
+                    <li>Geometry Shaders</li>
+                    <li>Tessellation Shader</li>
+                    <li>Compute Shaders</li>
+                </ul>
+
+                <div id="Shader Implementations"></div>
+                <h3>Shader Implementations:</h3>
+                <ul>
+                    <li>Blinn Phong Lighting model</li>
+                    <li>Billboards (for the light sources visual)</li>
+                    <li>Multiple Lights</li>
+                    <li>Alpha Blending and Transparency</li>
+                </ul>
+                <img src="Images/VulkanImg/BlinnPhong.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="750" height="370">
+
+
+                <div id="Summary"></div>
+                <h2>Summary</h2>
+                <h3>Technical Skills Demonstrated</h3>
+
+                <ul>
+                    <li>Understanding of the Vulkan API</li>
+                    <li>Cmake project structure</li>
+                    <li>Version Control through Github</li>
+                    <li>Debugging with RenderDoc</li>
+                </ul>
+
+                <div id="Future Goals"></div>
+                <h2>Future Goals:</h2>
+                <h3>(Project is still in devlopment)</h3>
+
+                <ul>
+                    <li>Explore more shader stages and pipelines (Geometry, Tessellation, Compute Shaders/Pipeline)</li>
+                    <li>Shadow Mapping</li>
+                    <li>Textures (currently working on it)</li>
+                    <li>Imgui Implementation (currently working on it)</li>
+                    <li>Physical based rendering</li>
+                    <li>Entity Component System</li>
+                    <li>LOD model generator</li>
+                    <li>Ray Tracing Pipeline</li>
+                    <li>Deferred Rendering</li>
+                </ul>
+            </p>
+
+       
+        <a href="index.html" class="contact-btn">Back to main page</a>
+         
+    </section>
+</div>
+  
+<footer>
+    <p>&copy; 2026 Periklis Lazarides. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
