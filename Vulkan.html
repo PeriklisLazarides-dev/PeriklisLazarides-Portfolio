@@ -22,7 +22,8 @@
       <a href="#Engine Structure">Engine Structure</a> |
       <a href="#Engine Implementation Features">Engine Implementation Features</a> |
       <a href="#Shader Stages">Shader Stage / Features</a> |  
-      <a href="#Shader Implementations">Shader Implementations</a> |  
+      <a href="#Shader Implementations">Shader Implementations</a> | 
+      <a href="#ImGUI Features">ImGUI Features</a> |   
       <a href="#Summary">Summary</a> |  
       <a href="#Future Goals">Future Goals</a> 
       
@@ -34,13 +35,20 @@
     <section class="about">
         <div id="Introduction"></div>
         <h2>Introduction</h2>
+
+        The main focus of the project is to learn the Vulkan API,
+            gain a better understanding of rendering/shader programming at a low level, improve my C++ skills and most importantly, 
+            use it for my <b>Thesis Project: Neuro-Driven Dynamic Tessellation</b>.<br><br>
+
+        <img src="Images/VulkanImg/Main.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="800" height="500">
+
+
         <p>
             The Vulkan Renderer is a personal project developed during my Master's. <br><br>
-            The main focus of the project is to learn the Vulkan API,
-            gain a better understanding of rendering at a low level and improve my C++ skills.
-            <br><br>
+            
+            
             Another focus is for me to be able to read and understand the vulkan documentation to be able 
-            to implement my own features in the renderer and hopefully use this in my thesis project in Master's.
+            to implement my own features in the renderer.
         </p>  
         <div id="Project Structure and Implemented features"></div>
             <h2>Project Structure and Implemented features</h2>
@@ -71,11 +79,7 @@
                     <li>Logical Device</li>
                     <li>Host / CPU</li>
                     <li>Swap Chain</li>
-                    <li>Dynamic Rendering</li>
-                   
                 </ul>
-                    Added <b>Dynamic Rendering</b> to replace the old way of using renderpasses and framebuffers, allowing 
-                    for a more intuitive, efficient and flexible implementation. (Only possible in Vulkan 1.3+)
 
 
                 <div id="Engine Implementation Features"></div>
@@ -84,22 +88,32 @@
                     <li>Dynamic Window resizing</li>
                     <li>Vertex / Index / Staging / Uniform Buffers</li>
                     <li>Push Constants</li>
-                    <li>Descriptors</li>
-
+                    <li>Descriptor Sets</li>
+                    <li>Dynamic Rendering</li>
+                    <li>Multi-Pass</li>
+                    <li>ImGUI</li>
+                    <li>Bindless Texture Mapping</li>
+                    <br>
+                    
                 </ul>
+                    Implemented <b>Dynamic Rendering</b> to replace the old way of using renderpasses and framebuffers, allowing 
+                    for a more intuitive, efficient and flexible implementation. (Only possible in Vulkan 1.3+)
+                    <br><br>
+                    Multipass: Writing to a texture off screen and rendering it on a fullscreen triangle. This 
+                    allows the manipulation of the texture before rendering, such as post processing effects.
+                    <br><br>
+                    Bindless textures: Textures are not bound to pipelines, meaning each object's texture can be
+                    <b>dynamically</b> changed on runtime. All textures are passed in within a single binding of
+                    a descriptor set.
+                    
 
                 <div id="Shader Stages"></div>
                 <h3>Shader Stage / Features:</h3>
                 <ul>
                     <li>Vertex Shader</li>
                     <li>Fragment Shader</li>
-                </ul>           
-                    <p>Future Shader Implementations:</p>
-                <ul>
-                    <li>Geometry Shaders</li>
-                    <li>Tessellation Shader</li>
                     <li>Compute Shaders</li>
-                </ul>
+                </ul>           
 
                 <div id="Shader Implementations"></div>
                 <h3>Shader Implementations:</h3>
@@ -108,8 +122,53 @@
                     <li>Billboards (for the light sources visual)</li>
                     <li>Multiple Lights</li>
                     <li>Alpha Blending and Transparency</li>
+                    <li>Skybox</li>
                 </ul>
+                Post Processing Effects with Compute Shaders:
+                <ul>
+                    <li>Invert Colours</li>
+                    <li>Dynamic Gaussian Blur</li>
+                </ul>
+
                 <img src="Images/VulkanImg/BlinnPhong.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="750" height="370">
+                <img src="Images/VulkanImg/invert.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="370">
+                
+                Blur intensity controlled through ImGUI:
+                <img src="Images/VulkanImg/blur4.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="370">
+                <img src="Images/VulkanImg/blur10.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="370">
+
+                All Post processing effects can be added:
+
+               <img src="Images/VulkanImg/invertblur.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="370">
+
+
+               <div id="ImGUI Features"></div>
+                <h2>ImGUI Features</h2>
+
+                <h3>Object Manipulation</h3>
+                <h3>Including:</h3>
+                <ul>
+                    <li>Object Selection</li>
+                    <li>3D Position</li>
+                    <li>3D Rotation</li>
+                    <li>3D Scaling</li>
+                    <li>Colour Picker</li>
+                    <li>Texture Picker</li>
+                </ul>
+
+                <img src="Images/VulkanImg/imguiOBJ.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="400" height="370">
+               <img src="Images/VulkanImg/OBJManip.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="370">
+
+               <h3>Render Modes and Effects</h3>
+                <h3>Including:</h3>
+                <ul>
+                    <li>Wireframe View</li>
+                    <li>Point/Vertex View</li>
+                    <li>Enabling Post Processing Effects</li>
+                    <li>Blur Intensity</li>
+                </ul>
+                <img src="Images/VulkanImg/wire.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="370">
+                <img src="Images/VulkanImg/dot.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="370">
 
 
                 <div id="Summary"></div>
@@ -130,13 +189,14 @@
                 <ul>
                     <li>Explore more shader stages and pipelines (Geometry, Tessellation, Compute Shaders/Pipeline)</li>
                     <li>Shadow Mapping</li>
-                    <li>Textures (currently working on it)</li>
-                    <li>Imgui Implementation (currently working on it)</li>
                     <li>Physical based rendering</li>
                     <li>Entity Component System</li>
                     <li>LOD model generator</li>
                     <li>Ray Tracing Pipeline</li>
                     <li>Deferred Rendering</li>
+                    <li>Noise Generation for height maps</li>
+                    <li>Shader Graph</li>
+                    <li>SSBO</li>
                 </ul>
             </p>
 
