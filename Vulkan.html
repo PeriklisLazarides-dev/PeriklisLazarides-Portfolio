@@ -40,7 +40,8 @@
             gain a better understanding of rendering/shader programming at a low level, improve my C++ skills and most importantly, 
             use it for my <b>Thesis Project: Neuro-Driven Dynamic Tessellation</b>.<br><br>
 
-        <img src="Images/VulkanImg/Main.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="800" height="500">
+            <b>CURRENT STATE OF THE RENDERER:</b>
+        <img src="Images/VulkanImg/newmain.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
 
 
         <p>
@@ -86,13 +87,15 @@
                 <h3>Engine Implementation Features:</h3>
                 <ul>
                     <li>Dynamic Window resizing</li>
-                    <li>Vertex / Index / Staging / Uniform Buffers</li>
+                    <li>Vertex / Index / Staging / Uniform / SSBO Buffers</li>
                     <li>Push Constants</li>
                     <li>Descriptor Sets</li>
                     <li>Dynamic Rendering</li>
                     <li>Multi-Pass</li>
                     <li>ImGUI</li>
                     <li>Bindless Texture Mapping</li>
+                    <li>Entity Component System</li>
+                    <li>Scene hierarchy and Entity manipulation</li>
                     <br>
                     
                 </ul>
@@ -105,7 +108,12 @@
                     Bindless textures: Textures are not bound to pipelines, meaning each object's texture can be
                     <b>dynamically</b> changed on runtime. All textures are passed in within a single binding of
                     a descriptor set.
-                    
+                    <br><br>
+                    Entity Component System: Wrote my own ECS and used it with ImGui for creating, manipulating and deleting
+                    entities on runtime. Add/Remove components, change component values such as transformation, colour, mesh, light etc.
+
+                    <img src="Images/VulkanImg/newimgui.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="700" height="600">
+
 
                 <div id="Shader Stages"></div>
                 <h3>Shader Stage / Features:</h3>
@@ -128,6 +136,7 @@
                 <ul>
                     <li>Invert Colours</li>
                     <li>Dynamic Gaussian Blur</li>
+                    <li>Particle System with SSBO</li>
                 </ul>
 
                 <img src="Images/VulkanImg/BlinnPhong.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="750" height="370">
@@ -141,6 +150,9 @@
 
                <img src="Images/VulkanImg/invertblur.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="370">
 
+               Rings are Particles made with SSBOs:
+               <img src="Images/VulkanImg/Screenshot 2026-02-28 003500.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="500">
+               
 
                <div id="ImGUI Features"></div>
                 <h2>ImGUI Features</h2>
@@ -148,15 +160,20 @@
                 <h3>Object Manipulation</h3>
                 <h3>Including:</h3>
                 <ul>
-                    <li>Object Selection</li>
+                    <li>Object Selection/Hierarchy</li>
                     <li>3D Position</li>
                     <li>3D Rotation</li>
                     <li>3D Scaling</li>
                     <li>Colour Picker</li>
                     <li>Texture Picker</li>
+                    <li>Add/Remove components</li>
+                    <li>Create/Destroy Entities</li>
+                    <li>Light manipulation</li>
                 </ul>
 
-                <img src="Images/VulkanImg/imguiOBJ.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="400" height="370">
+                <img src="Images/VulkanImg/newimgui.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="700" height="600">
+                Added 2 extra Entities:
+                <img src="Images/VulkanImg/newent.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="700" height="600">
                <img src="Images/VulkanImg/OBJManip.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="370">
 
                <h3>Render Modes and Effects</h3>
@@ -187,16 +204,25 @@
                 <h3>(Project is still in devlopment)</h3>
 
                 <ul>
-                    <li>Explore more shader stages and pipelines (Geometry, Tessellation, Compute Shaders/Pipeline)</li>
+                    <li>Explore more shader stages and pipelines (Geometry, Tessellation)</li>
                     <li>Shadow Mapping</li>
                     <li>Physical based rendering</li>
-                    <li>Entity Component System</li>
                     <li>LOD model generator</li>
                     <li>Ray Tracing Pipeline</li>
                     <li>Deferred Rendering</li>
                     <li>Noise Generation for height maps</li>
                     <li>Shader Graph</li>
+                </ul>
+                Done:                   
+                <ul>
+                    <li>Dynamic Rendering</li>
+                    <li>Multipass</li>
+                    <li>Post Processing</li>
+                    <li>Texture Mapping</li>
+                    <li>Entity Component System</li>
                     <li>SSBO</li>
+                    <li>ImGui Hierarchy/Scene Creator</li>
+                    <li>Compute Shaders/Pipeline</li>
                 </ul>
             </p>
 
