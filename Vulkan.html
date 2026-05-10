@@ -13,7 +13,7 @@
 <body>
   <header> 
     <h1>Vulkan Renderer</h1>
-    <p>Personal Project (Still in development)</p>
+    <p>Personal Project (Still in development / Last update: Shadow Mapping)</p>
 
     <div class="center-box">
       <p>
@@ -41,7 +41,7 @@
             use it for my <b>Thesis Project: Neuro-Driven Dynamic Tessellation</b>.<br><br>
 
             <b>CURRENT STATE OF THE RENDERER:</b>
-        <img src="Images/VulkanImg/newmain.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+        <img src="Images/VulkanImg/CurrentState.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
 
 
         <p>
@@ -131,6 +131,7 @@
                     <li>Multiple Lights</li>
                     <li>Alpha Blending and Transparency</li>
                     <li>Skybox</li>
+                    <li>Shadow Mapping with Directional Lighting (Bias and PeterPlanning)</li>
                 </ul>
                 Post Processing Effects with Compute Shaders:
                 <ul>
@@ -142,18 +143,26 @@
                 <img src="Images/VulkanImg/BlinnPhong.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="750" height="370">
                 <img src="Images/VulkanImg/invert.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="370">
                 
-                Blur intensity controlled through ImGUI:
-                <img src="Images/VulkanImg/blur4.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="370">
-                <img src="Images/VulkanImg/blur10.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="370">
-
-                All Post processing effects can be added:
+                <h3>Blur intensity controlled through ImGUI:</h3>
+                <div style="display: flex;">
+                    <img src="Images/VulkanImg/blur4.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="350" height="275">
+                    <img src="Images/VulkanImg/blur10.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="350" height="275">
+                </div>
+               
+                <h3>Post processing effects can be added simultaneously (blur and invert):</h3> 
 
                <img src="Images/VulkanImg/invertblur.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="370">
 
-               Rings are Particles made with SSBOs:
-               <img src="Images/VulkanImg/Screenshot 2026-02-28 003500.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="500">
+               <h3>Rings are Particles made with SSBOs:</h3>
+               <img src="Images/VulkanImg/Screenshot 2026-02-28 003500.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="400" height="350">
                
-
+                <h3>Shadow Mapping and shadow manipulation through ImGUI:</h3>
+                <div style="display: flex;">
+                    <img src="Images/VulkanImg/depth.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="300" height="250">
+                    <img src="Images/VulkanImg/Shadow1 (1).png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="300" height="250">
+                    <img src="Images/VulkanImg/Shadow2.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="300" height="250">
+                </div>
+                
                <div id="ImGUI Features"></div>
                 <h2>ImGUI Features</h2>
 
@@ -168,14 +177,17 @@
                     <li>Texture Picker</li>
                     <li>Add/Remove components</li>
                     <li>Create/Destroy Entities</li>
-                    <li>Light manipulation</li>
+                    <li>Light/Shadow manipulation</li>
                 </ul>
 
                 <img src="Images/VulkanImg/newimgui.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="700" height="600">
                 Added 2 extra Entities:
-                <img src="Images/VulkanImg/newent.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="700" height="600">
-               <img src="Images/VulkanImg/OBJManip.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="600" height="370">
+                 <div style="display: flex;">
+                    <img src="Images/VulkanImg/newent.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="400" height="300">
+                    <img src="Images/VulkanImg/OBJManip.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="400" height="300">
 
+                 </div>
+                
                <h3>Render Modes and Effects</h3>
                 <h3>Including:</h3>
                 <ul>
@@ -184,9 +196,12 @@
                     <li>Enabling Post Processing Effects</li>
                     <li>Blur Intensity</li>
                 </ul>
-                <img src="Images/VulkanImg/wire.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="370">
-                <img src="Images/VulkanImg/dot.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="370">
+                <div style="display: flex;">
+                    <img src="Images/VulkanImg/wire.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="400" height="300">
+                    <img src="Images/VulkanImg/dot.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="400" height="300">
 
+                </div>
+                
 
                 <div id="Summary"></div>
                 <h2>Summary</h2>
@@ -205,7 +220,6 @@
 
                 <ul>
                     <li>Explore more shader stages and pipelines (Geometry, Tessellation)</li>
-                    <li>Shadow Mapping</li>
                     <li>Physical based rendering</li>
                     <li>LOD model generator</li>
                     <li>Ray Tracing Pipeline</li>
@@ -215,6 +229,7 @@
                 </ul>
                 Done:                   
                 <ul>
+                    <li>Shadow Mapping</li>
                     <li>Dynamic Rendering</li>
                     <li>Multipass</li>
                     <li>Post Processing</li>
