@@ -13,7 +13,7 @@
 <body>
   <header> 
     <h1>Vulkan Renderer</h1>
-    <p>Personal Project (Still in development / Last update: Shadow Mapping)</p>
+    <p>Personal Project (Still in development / Last update: PCF and Shadow Sampler for Shadows)</p>
 
     <div class="center-box">
       <p>
@@ -131,7 +131,16 @@
                     <li>Multiple Lights</li>
                     <li>Alpha Blending and Transparency</li>
                     <li>Skybox</li>
-                    <li>Shadow Mapping with Directional Lighting (Bias and PeterPlanning)</li>
+                    <li>Shadow Mapping: 
+                        <ul>
+                            <li>Directional Lighting</li>
+                            <li>PCF</li>
+                            <li>Shadow Sampler</li>
+                            <li>Shadow Bias</li>
+                            <li>Peter Planning</li>
+                        </ul>
+                    </li>
+                    
                 </ul>
                 Post Processing Effects with Compute Shaders:
                 <ul>
@@ -163,6 +172,15 @@
                     <img src="Images/VulkanImg/Shadow2.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="300" height="250">
                 </div>
                 
+                <h3>Differences in shadows: default / PCF / PCF with Shadow Sampler</h3>
+                (Example is a shadow of a vase model on another vase model)<br>
+                Changing to PCF already makes a massive differences. Shadow sampler removes the obvious shadow pixels that PCF has and makes them much smoother.
+                 <div style="display: flex;">
+                    <img src="Images/VulkanImg/normalSh.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="300" height="250">
+                    <img src="Images/VulkanImg/pcf.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="300" height="250">
+                    <img src="Images/VulkanImg/pcfSampler2.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="300" height="250">
+                </div>
+
                <div id="ImGUI Features"></div>
                 <h2>ImGUI Features</h2>
 
@@ -229,7 +247,7 @@
                 </ul>
                 Done:                   
                 <ul>
-                    <li>Shadow Mapping</li>
+                    <li>Shadow Mapping (PCF / Shadow Sampler)</li>
                     <li>Dynamic Rendering</li>
                     <li>Multipass</li>
                     <li>Post Processing</li>
@@ -238,6 +256,10 @@
                     <li>SSBO</li>
                     <li>ImGui Hierarchy/Scene Creator</li>
                     <li>Compute Shaders/Pipeline</li>
+                    <li>Bindless Descriptor Sets</li>
+                    <li>Dynamic Rendering</li>
+                    <li>Scene hierarchy ImGUI</li>
+                    <li>Entity manipulation ImGUI</li>
                 </ul>
             </p>
 
