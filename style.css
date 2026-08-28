@@ -1,144 +1,887 @@
+/* ============================================================
+   Periklis Lazarides — Portfolio
+   Theme: modern white with red accents
+   ============================================================ */
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d0018;
-      color: #ffffff;
-    }
-    header {
-      background-color: #240042;
-      color: #ffffff;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-    section {
-      margin-bottom: 3rem;
-    }
-    h2 {
-      border-bottom: 2px solid #240042;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .mods {
-      display: grid;
-      grid-template-columns: repeat(3, 250px);
-      gap: 3.7rem; 
-      justify-content: left; 
-    }
-    .mod {
-      background: #240042;
-      padding: 1rem;
-      color: #f4f4f4;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+:root {
+  --red:          #e11d2e;
+  --red-dark:     #b3121f;
+  --red-light:    #ff4757;
+  --red-soft:     rgba(225, 29, 46, 0.08);
+  --red-glow:     rgba(225, 29, 46, 0.28);
 
-      width: 250px;  
-      height: 500px; 
-      overflow: auto;
-    }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(2, 400px);
-      gap: 4.4rem; 
-      justify-content: left; 
-    }
-    .project {
-      background: #240042;
-      padding: 1rem;
-      color: #f4f4f4;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  --bg:           #ffffff;
+  --bg-alt:       #f7f8fa;
+  --bg-card:      #ffffff;
 
-      width: 400px;  
-      height: 470px; 
-      overflow: auto;
-    }
-    .project h3 {
-      margin-top: 0;
-    }
-    .contact p {
-      margin: 0.5rem 0;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #240042;
-      color: #ffffff;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-      align-self: flex-start; /* optional, keeps it on the left */
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 columns */
-      grid-template-rows: repeat(3, auto);   /* 3 rows */
-      gap: 1rem; 
-      width: 400px; /* optional */
-    }
+  --text:         #14161a;
+  --text-soft:    #4a5058;
+  --text-muted:   #7a828c;
 
-    .excel-table, .excel-table td {
-      border: 4px solid #240042;
-      border-collapse: collapse;
-      width: 900px;
-      height: 60px;
-      text-align: center;
-      font-size: 1.1rem;
-    }
+  --border:       #e6e8ec;
+  --border-strong:#d3d7dd;
 
-    .contact-btn {
-      display: inline-block;
-      padding: 12px 20px;
-      background-color: #7b3fff; /* purple */
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      transition: 0.2s ease;
-    }
+  --shadow-sm:  0 1px 2px rgba(20, 22, 26, .05), 0 2px 6px rgba(20, 22, 26, .04);
+  --shadow-md:  0 4px 12px rgba(20, 22, 26, .07), 0 12px 28px rgba(20, 22, 26, .06);
+  --shadow-lg:  0 10px 24px rgba(20, 22, 26, .09), 0 24px 60px rgba(20, 22, 26, .10);
+  --shadow-red: 0 10px 28px rgba(225, 29, 46, .25);
 
-    .contact-btn:hover {
-      background-color: #632fd1; /* darker purple on hover */
-    }
+  --radius:     14px;
+  --radius-sm:  10px;
+  --radius-lg:  22px;
 
-    .contact-btn:active {
-      transform: translateY(0);
-    }
-    .centered-text {
-      text-align: center;
-    }
-    .center-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .mod-title {
-      margin-top: -20px; 
-    }
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --maxw: 1120px;
+}
 
-    .tag {
-      display: inline-block;
-      padding: 4px 8px;
-      background-color: #0d0018;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 400;
-      transition: 0.2s ease;
-    }
+/* ---------- reset / base ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* subtle red aura in the page background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(700px 500px at 12% -5%,  rgba(225, 29, 46, .07), transparent 60%),
+    radial-gradient(600px 450px at 95% 8%,   rgba(225, 29, 46, .05), transparent 60%),
+    radial-gradient(800px 600px at 50% 105%, rgba(225, 29, 46, .04), transparent 60%);
+}
+
+img { max-width: 100%; }
+
+::selection { background: var(--red); color: #fff; }
+
+/* ---------- scroll progress bar (injected by Scripts.js) ---------- */
+
+#scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  z-index: 9999;
+  background: linear-gradient(90deg, var(--red-light), var(--red), var(--red-dark));
+  box-shadow: 0 0 12px var(--red-glow);
+  transition: width .1s linear;
+}
+
+/* ---------- header ---------- */
+
+header {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(170deg, #ffffff 0%, #fdf6f7 55%, #fbeef0 100%);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  padding: 4rem 1.25rem 3rem;
+  text-align: center;
+}
+
+/* animated diagonal red grid in the header */
+header::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  z-index: 0;
+  opacity: .5;
+  background-image:
+    linear-gradient(rgba(225, 29, 46, .07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(225, 29, 46, .07) 1px, transparent 1px);
+  background-size: 46px 46px;
+  transform: rotate(-8deg);
+  -webkit-mask-image: radial-gradient(60% 60% at 50% 40%, #000 0%, transparent 100%);
+          mask-image: radial-gradient(60% 60% at 50% 40%, #000 0%, transparent 100%);
+  animation: gridDrift 26s linear infinite;
+}
+
+@keyframes gridDrift {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 46px 46px, 46px 46px; }
+}
+
+/* soft red glow blob behind the avatar */
+header::after {
+  content: "";
+  position: absolute;
+  top: -140px; left: 50%;
+  width: 520px; height: 340px;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, var(--red-glow), transparent 70%);
+  filter: blur(14px);
+  z-index: 0;
+  pointer-events: none;
+  animation: pulseGlow 7s var(--ease) infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: .55; transform: translateX(-50%) scale(1); }
+  50%      { opacity: .85; transform: translateX(-50%) scale(1.08); }
+}
+
+header > * { position: relative; z-index: 1; }
+
+/* profile picture — overrides the inline width/height in the HTML */
+header img {
+  width: 148px !important;
+  height: 148px !important;
+  object-fit: cover;
+  border-radius: 50% !important;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 3px var(--red), var(--shadow-lg);
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+  animation: floatY 6s ease-in-out infinite;
+}
+
+header img:hover {
+  transform: scale(1.06) rotate(3deg);
+  box-shadow: 0 0 0 5px var(--red), var(--shadow-red);
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
+}
+
+header h1 {
+  margin: 1.25rem 0 0;
+  font-size: clamp(2rem, 6.5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+  background: linear-gradient(100deg, var(--text) 20%, var(--red) 55%, var(--red-dark) 90%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 220% auto;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: 220% center; }
+}
+
+header p {
+  font-size: clamp(.95rem, 2.6vw, 1.15rem);
+  margin-top: .5rem;
+  color: var(--text-soft);
+}
+
+/* the tagline line under the name */
+header .center-box {
+  font-size: clamp(.9rem, 2.5vw, 1.1rem);
+  color: var(--text-soft);
+  font-weight: 500;
+  letter-spacing: .02em;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* the nav row of buttons in the header */
+header .center-box p {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .6rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+/* IronReign-style plain-link sub-nav */
+header .center-box p a:not(.contact-btn) {
+  color: var(--text-soft);
+  font-weight: 600;
+  font-size: .9rem;
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, .7);
+  transition: all .25s var(--ease);
+}
+
+header .center-box p a:not(.contact-btn):hover {
+  color: var(--red);
+  border-color: var(--red);
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* the section currently in view — set by Scripts.js */
+header .center-box p a:not(.contact-btn).active {
+  color: var(--red);
+  border-color: var(--red);
+  background: var(--red-soft);
+}
+
+header .contact-btn.active {
+  box-shadow: 0 0 0 3px rgba(225, 29, 46, .22), 0 8px 22px rgba(225, 29, 46, .32);
+  transform: translateY(-2px);
+}
+
+/* ---------- layout ---------- */
+
+.container {
+  max-width: var(--maxw);
+  margin: auto;
+  padding: 3rem 1.25rem;
+}
+
+section { margin-bottom: 3.5rem; }
+
+/* ---------- headings ---------- */
+
+h2 {
+  position: relative;
+  font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: .6rem;
+  margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
+/* red underline accent */
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -1px;
+  height: 3px;
+  width: 62px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--red), var(--red-light));
+  box-shadow: 0 0 10px var(--red-glow);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: var(--text);
+  margin-bottom: .5rem;
+}
+
+.container p, .container li {
+  color: var(--text-soft);
+}
+
+.container b, .container strong { color: var(--text); font-weight: 700; }
+
+/* ---------- links ---------- */
+
+a {
+  color: var(--red);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color .2s var(--ease);
+}
+
+a:hover { color: var(--red-dark); }
+
+/* animated underline for plain in-body links */
+.container p > a:not(.contact-btn),
+.contact a:not(.contact-btn) {
+  position: relative;
+  background-image: linear-gradient(var(--red), var(--red));
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size .3s var(--ease), color .2s var(--ease);
+  padding-bottom: 2px;
+}
+
+.container p > a:not(.contact-btn):hover,
+.contact a:not(.contact-btn):hover {
+  background-size: 100% 2px;
+}
+
+/* ---------- cards: projects + mods ---------- */
+
+/* 3 cards per row on desktop, dropping to 2 then 1 on smaller screens.
+   minmax(0, 1fr) rather than 1fr so a long word can never widen a column. */
+.projects,
+.mods {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+  align-items: stretch;
+  justify-content: start;
+}
+
+/* index.html wraps the card grid in an outer <section class="projects">
+   around the inner <div class="projects">. Only the element that directly
+   holds the cards may be the grid — if the wrapper is one too, the inner
+   grid gets squeezed into a single column and every card stacks vertically. */
+section.projects:has(> .projects) {
+  display: block;
+}
+
+@supports not selector(:has(*)) {
+  section.projects { display: block; }
+}
+
+.project, .mod {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--bg-card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.35rem 1.35rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform .45s var(--ease),
+              box-shadow .45s var(--ease),
+              border-color .45s var(--ease);
+}
+
+/* red bar that sweeps across the top of a card on hover */
+.project::before, .mod::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  height: 4px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--red), var(--red-light));
+  transition: transform .5s var(--ease);
+}
+
+/* soft red wash that follows the cursor */
+.project::after, .mod::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(420px 220px at var(--mx, 50%) var(--my, 0%), var(--red-soft), transparent 70%);
+  transition: opacity .45s var(--ease);
+}
+
+.project > *, .mod > * { position: relative; z-index: 1; }
+
+.project:hover, .mod:hover {
+  transform: translateY(-8px);
+  border-color: rgba(225, 29, 46, .35);
+  box-shadow: var(--shadow-lg);
+}
+
+.project:hover::before, .mod:hover::before { transform: scaleX(1); }
+.project:hover::after,  .mod:hover::after  { opacity: 1; }
+
+.project h3, .mod h3 {
+  margin-top: 0;
+  font-size: 1.18rem;
+  line-height: 1.35;
+}
+
+.project p, .mod p {
+  font-size: .94rem;
+  line-height: 1.65;
+  color: var(--text-soft);
+  flex-grow: 1;
+}
+
+/* Card thumbnails — override the inline width/height/margins in the HTML.
+   Scoped under .container so these beat the content-image rules further down,
+   which would otherwise force the thumbnails back to height:auto. */
+.container .project img, .container .mod img {
+  display: block !important;
+  width: 100% !important;
+  height: 200px !important;
+  object-fit: cover;
+  margin: 1rem 0 1.1rem !important;
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--border);
+  transition: transform .55s var(--ease), box-shadow .55s var(--ease);
+}
+
+.container .project:hover img, .container .mod:hover img {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-md);
+}
+
+/* mods use portrait art — contain rather than crop */
+.container .mod img {
+  object-fit: contain;
+  background: var(--bg-alt);
+  height: 210px !important;
+}
+
+.mod-title { margin-top: 0; }
+
+/* push the button to the bottom of every card so they line up */
+.project > .center-box:last-child,
+.mod > .center-box:last-child {
+  margin-top: auto;
+}
+
+/* ---------- tags ---------- */
+
+.tag {
+  display: inline-block;
+  padding: .35rem .85rem;
+  margin-bottom: .35rem;
+  background: var(--red-soft);
+  color: var(--red-dark);
+  border: 1px solid rgba(225, 29, 46, .22);
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  transition: all .25s var(--ease);
+}
+
+.project:hover .tag, .mod:hover .tag {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
+  box-shadow: 0 4px 14px var(--red-glow);
+}
+
+/* ---------- buttons ---------- */
+
+.contact-btn {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: .7rem 1.35rem;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: .92rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(225, 29, 46, .28);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), filter .3s var(--ease);
+}
+
+/* light sweep across the button on hover */
+.contact-btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -120%;
+  width: 60%; height: 100%;
+  transform: skewX(-22deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .45), transparent);
+  transition: left .6s var(--ease);
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.06);
+  box-shadow: 0 10px 26px rgba(225, 29, 46, .38);
+}
+
+.contact-btn:hover::after { left: 130%; }
+
+.contact-btn:active { transform: translateY(-1px) scale(.98); }
+
+/* ---------- content images (project detail pages) ---------- */
+
+.container > section img,
+.container section > img {
+  max-width: 100% !important;
+  height: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  cursor: zoom-in;
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+
+.container > section img:hover,
+.container section > img:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* the inline display:flex image rows on detail pages must wrap on phones */
+.container div[style*="display: flex"],
+.container div[style*="display:flex"] {
+  flex-wrap: wrap;
+  gap: .75rem;
+  align-items: flex-start;
+}
+
+.container div[style*="display: flex"] img,
+.container div[style*="display:flex"] img {
+  max-width: 100% !important;
+  height: auto !important;
+  margin-left: 0 !important;
+  flex: 1 1 260px;
+  min-width: 0;
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  cursor: zoom-in;
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+
+.container div[style*="display: flex"] img:hover,
+.container div[style*="display:flex"] img:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ---------- misc layout helpers (kept from the original) ---------- */
+
+.centered-text { text-align: center; }
+
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+/* ---------- skills table ---------- */
+
+.excel-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  font-size: 1rem;
+  background: var(--bg-card);
+}
+
+.excel-table td {
+  border: none;
+  border-bottom: 1px solid var(--border);
+  width: auto;
+  height: auto;
+  padding: 1rem 1.15rem;
+  text-align: left;
+  font-size: .96rem;
+  color: var(--text-soft);
+  transition: background .25s var(--ease);
+}
+
+.excel-table tr:last-child td { border-bottom: none; }
+
+/* the label column */
+.excel-table td:first-child {
+  width: 34%;
+  background: var(--bg-alt);
+  color: var(--text);
+  font-weight: 700;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+
+.excel-table td:first-child::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--red);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .35s var(--ease);
+}
+
+.excel-table tr:hover td { background: var(--red-soft); }
+.excel-table tr:hover td:first-child::before { transform: scaleY(1); }
+
+/* ---------- lists ---------- */
+
+.container ul, .container dl { padding-left: 1.25rem; }
+
+.container ul li, .container dl li {
+  margin-bottom: .5rem;
+  list-style: none;
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.container ul li::before, .container dl li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .68em;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 0 3px var(--red-soft);
+}
+
+/* ---------- contact section ---------- */
+
+.contact {
+  padding: 2rem 1.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  font-size: 1.05rem;
+}
+
+.contact h2 { margin-top: 0; }
+
+/* ---------- footer ---------- */
+
+footer {
+  position: relative;
+  text-align: center;
+  padding: 2rem 1.25rem;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: .9rem;
+}
+
+footer p { margin: 0; }
+
+/* red hairline along the top of the footer */
+footer::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+  opacity: .55;
+}
+
+/* ---------- back-to-top button (injected by Scripts.js) ---------- */
+
+#back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 999;
+  width: 46px; height: 46px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  box-shadow: var(--shadow-red);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(.85);
+  transition: all .4s var(--ease);
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+#back-to-top:hover {
+  transform: translateY(-4px) scale(1.07);
+  filter: brightness(1.08);
+}
+
+/* ---------- image lightbox (injected by Scripts.js) ---------- */
+
+#lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(15, 16, 20, .88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  cursor: zoom-out;
+  transition: opacity .3s var(--ease), visibility .3s var(--ease);
+}
+
+#lightbox.open { opacity: 1; visibility: visible; }
+
+#lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .12), 0 30px 80px rgba(0, 0, 0, .6);
+  transform: scale(.94);
+  transition: transform .35s var(--ease);
+}
+
+#lightbox.open img { transform: scale(1); }
+
+/* ---------- scroll reveal (driven by Scripts.js) ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+  will-change: opacity, transform;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (max-width: 1000px) {
+  .projects, .mods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  .container { padding: 2.25rem 1.15rem; }
+  .projects, .mods { gap: 1.35rem; }
+}
+
+@media (max-width: 700px) {
+  html { scroll-padding-top: 70px; }
+
+  header { padding: 2.75rem 1rem 2.25rem; }
+  header img { width: 118px !important; height: 118px !important; }
+  header .center-box p { gap: .45rem; margin-top: 1.15rem; }
+
+  .contact-btn {
+    padding: .6rem 1.05rem;
+    font-size: .85rem;
+  }
+
+  .container { padding: 2rem 1rem; }
+  section { margin-bottom: 2.5rem; }
+
+  /* single column cards on phones */
+  .projects, .mods {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .project, .mod { padding: 1.25rem 1.1rem 1.15rem; }
+  .container .project img, .container .mod img { height: 180px !important; }
+
+  /* stack the skills table into label/value rows */
+  .excel-table, .excel-table tbody, .excel-table tr, .excel-table td {
+    display: block;
+    width: 100% !important;
+  }
+
+  .excel-table tr { border-bottom: 1px solid var(--border); }
+  .excel-table tr:last-child { border-bottom: none; }
+
+  .excel-table td {
+    border-bottom: none;
+    padding: .8rem 1rem;
+  }
+
+  .excel-table td:first-child {
+    width: 100% !important;
+    border-right: none;
+    padding-bottom: .35rem;
+    font-size: .82rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--red-dark);
+  }
+
+  .excel-table td:last-child { padding-top: 0; }
+
+  .contact { padding: 1.5rem 1.15rem; }
+
+  #back-to-top {
+    width: 42px; height: 42px;
+    right: 1rem; bottom: 1rem;
+  }
+
+  /* detail-page image rows: one per line */
+  .container div[style*="display: flex"] img,
+  .container div[style*="display:flex"] img {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  header h1 { font-size: 1.85rem; }
+  .contact-btn { padding: .55rem .95rem; font-size: .8rem; }
+}
+
+/* ---------- touch devices: drop hover-only transforms ---------- */
+
+@media (hover: none) {
+  .project:hover, .mod:hover { transform: none; }
+  .project:hover img, .mod:hover img { transform: none; }
+  .contact-btn:hover { transform: none; }
+  header img:hover { transform: none; }
+}
+
+/* ---------- accessibility ---------- */
+
+a:focus-visible,
+button:focus-visible,
+.contact-btn:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ---------- print ---------- */
+
+@media print {
+  body::before, header::before, header::after,
+  #back-to-top, #scroll-progress, #lightbox { display: none !important; }
+
+  .project, .mod { break-inside: avoid; box-shadow: none; }
+}
