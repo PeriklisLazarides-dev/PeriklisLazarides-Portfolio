@@ -45,6 +45,7 @@ html {
 }
 
 body {
+  position: relative; /* containing block for the wireframe layer */
   margin: 0;
   font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--bg);
@@ -71,6 +72,54 @@ body::before {
 img { max-width: 100%; }
 
 ::selection { background: var(--red); color: #fff; }
+
+/* ---------- floating wireframe solids (index only, injected by Scripts.js) ---------- */
+
+#wireframes {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;          /* behind the content, above the body background */
+  overflow: hidden;     /* keeps stray shapes from widening the page */
+  pointer-events: none;
+  contain: strict;
+}
+
+.wf {
+  position: absolute;
+  will-change: transform;
+}
+
+.wf svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.wf [stroke],
+.wf polygon, .wf polyline, .wf line,
+.wf circle, .wf ellipse, .wf path {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke; /* hairlines stay crisp at any size */
+}
+
+.wf-spin {
+  transform-origin: 50% 50%;
+  animation-name: wfSpin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wfSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
 
 /* ---------- scroll progress bar (injected by Scripts.js) ---------- */
 
@@ -881,6 +930,7 @@ button:focus-visible,
 
 @media print {
   body::before, header::before, header::after,
+  #wireframes,
   #back-to-top, #scroll-progress, #lightbox { display: none !important; }
 
   .project, .mod { break-inside: avoid; box-shadow: none; }
