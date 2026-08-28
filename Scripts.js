@@ -369,31 +369,31 @@
   /* ---------- mark the header link for the section you are reading ---------- */
 
   function setupNavHighlight() {
-    var links = document.querySelectorAll('header a[href^="#"]');
-    if (!links.length || !("IntersectionObserver" in window)) return;
-
-    var map = {};
-    var sections = [];
-
-    Array.prototype.forEach.call(links, function (link) {
-      var id = decodeURIComponent(link.getAttribute("href").slice(1));
-      var target = document.getElementById(id);
-      if (!target) return;
-      map[id] = link;
-      sections.push(target);
-    });
-
-    if (!sections.length) return;
+        var visible = [];
 
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        Array.prototype.forEach.call(links, function (l) {
-          l.classList.remove("active");
-        });
-        var link = map[entry.target.id];
-        if (link) link.classList.add("active");
+        var i = visible.indexOf(entry.target);
+        if (entry.isIntersecting) {
+          if (i === -1) visible.push(entry.target);
+        } else if (i !== -1) {
+          visible.splice(i, 1);
+        }
       });
+
+      Array.prototype.forEach.call(links, function (l) {
+        l.classList.remove("active");
+      });
+
+      if (!visible.length) return;   // no section in the band — nothing highlighted
+
+      // topmost visible section wins
+      var current = visible.reduce(function (a, b) {
+        return a.getBoundingClientRect().top < b.getBoundingClientRect().top ? a : b;
+      });
+
+      var link = map[current.id];
+      if (link) link.classList.add("active");
     }, { rootMargin: "-45% 0px -50% 0px" });
 
     sections.forEach(function (s) { observer.observe(s); });
