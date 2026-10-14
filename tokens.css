@@ -1,0 +1,97 @@
+/* ============================================================
+   Periklis Lazarides — design tokens ("Viewport", dark only)
+
+   Two layers:
+     1. primitives  — raw values, never used by components directly
+     2. semantic    — what components use (--color-*, --space-*, ...)
+
+   Contrast ratios are against --color-bg (#0e1014) unless noted.
+   ============================================================ */
+
+:root {
+  /* ---------- primitives ---------- */
+  --gray-950: #0a0b0e;
+  --gray-900: #0e1014;
+  --gray-850: #161a20;
+  --gray-800: #1e232b;
+  --gray-700: #2a303a;
+  --gray-600: #5d6573;
+  --gray-400: #808996;
+  --gray-300: #a8b0bc;
+  --gray-100: #e6e9ee;
+
+  --red-300: #ff8a94;
+  --red-400: #ff5a67;
+  --red-500: #e11d2e;
+
+  --amber-400: #e8b04a;
+
+  /* ---------- semantic: colour ---------- */
+  --color-bg:          var(--gray-900);
+  --color-bg-sunk:     var(--gray-950);  /* media frames, code */
+  --color-surface:     var(--gray-850);  /* cards, panels */
+  --color-raised:      var(--gray-800);  /* chips, hover fills */
+  --color-border:      var(--gray-700);  /* decorative hairlines */
+  --color-border-ctl:  var(--gray-600);  /* 3.24:1, interactive borders */
+
+  --color-text:        var(--gray-100);  /* 15.65:1 */
+  --color-text-soft:   var(--gray-300);  /*  8.71:1 */
+  --color-text-muted:  var(--gray-400);  /*  5.38:1 (4.94:1 on surface) */
+
+  --color-accent:      var(--red-400);   /*  6.27:1 */
+  --color-accent-hi:   var(--red-300);   /*  8.45:1, hover */
+  --color-accent-soft: rgba(255, 90, 103, .12);
+  --color-on-accent:   var(--gray-900);  /*  6.27:1 on accent */
+
+  --color-warn:        var(--amber-400); /*  8.93:1, WIP status */
+
+  /* ---------- semantic: type ---------- */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, "SF Mono", Menlo, monospace;
+
+  /* 1.25 ratio on a 16px base */
+  --text-xs:  .75rem;    /* 12 — mono labels */
+  --text-sm:  .875rem;   /* 14 */
+  --text-md:  1rem;      /* 16 — body */
+  --text-lg:  1.25rem;   /* 20 */
+  --text-xl:  1.5625rem; /* 25 */
+  --text-2xl: 1.9375rem; /* 31 */
+  --text-3xl: 2.4375rem; /* 39 */
+  --text-4xl: 3.0625rem; /* 49 */
+
+  --leading-tight: 1.15;
+  --leading-body:  1.65;
+  --tracking-label: .08em;
+
+  /* ---------- semantic: space (4px base) ---------- */
+  --space-1: .25rem;  /*  4 */
+  --space-2: .5rem;   /*  8 */
+  --space-3: .75rem;  /* 12 */
+  --space-4: 1rem;    /* 16 */
+  --space-5: 1.5rem;  /* 24 */
+  --space-6: 2rem;    /* 32 */
+  --space-7: 3rem;    /* 48 */
+  --space-8: 4rem;    /* 64 */
+  --space-9: 6rem;    /* 96 */
+
+  /* ---------- semantic: shape, depth, motion ---------- */
+  --radius-sm: 4px;   /* controls, chips */
+  --radius-md: 6px;   /* cards, media */
+
+  /* depth comes from surface steps + borders; one shadow, for overlays only */
+  --shadow-overlay: 0 16px 48px rgba(0, 0, 0, .55);
+
+  --dur-fast:  120ms;
+  --dur:       200ms;
+  --dur-enter: 320ms;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+
+  /* ---------- semantic: layout ---------- */
+  --maxw: 1200px;
+  --maxw-prose: 960px;  /* project pages */
+  --measure: 70ch;
+  --nav-h: 56px;
+  --gutter: clamp(1rem, 4vw, 2rem);
+
+  color-scheme: dark;
+}

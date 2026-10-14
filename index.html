@@ -1,382 +1,378 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="Images/gitprofile-modified.png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Periklis Lazarides - Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periklis Lazarides · Graphics Programmer</title>
+  <meta name="description" content="Portfolio of Periklis Lazarides, graphics and rendering programmer: a Vulkan renderer, GLSL shader programming, a C++ ray tracer and neural SDFs for mesh reconstruction (MSc AI).">
+  <meta name="theme-color" content="#0e1014">
+  <link rel="canonical" href="https://periklislazarides-dev.github.io/PeriklisLazarides-Portfolio/">
 
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Periklis Lazarides · Graphics Programmer">
+  <meta property="og:description" content="Real-time rendering in Vulkan/C++ and neural 3D representations. MSc Artificial Intelligence.">
+  <meta property="og:url" content="https://periklislazarides-dev.github.io/PeriklisLazarides-Portfolio/">
+  <meta property="og:image" content="https://periklislazarides-dev.github.io/PeriklisLazarides-Portfolio/Images/thumbs/vulkan-renderer.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="Images/gitprofile.png">
+  <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="style.css">
-
-  
 </head>
 <body>
-  <header> 
-    <img src="Images/gitprofile.png" alt="profile picture" style="width:125px; height:125px; border-radius:50%;">
-    <h1>Periklis Lazarides</h1>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="center-box">
-           Game Developer | Programmer | Computer Graphics <br><br>
+  <nav class="site-nav" aria-label="Primary">
+    <div class="l-container site-nav__inner">
+      <a class="site-nav__brand" href="index.html">
+        <img src="Images/gitprofile.png" alt="" width="28" height="28">
+        <span>Periklis Lazarides</span>
+      </a>
+      <ul class="site-nav__links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#mods">Mods</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="site-nav__social">
+        <a class="icon-link" href="https://github.com/PeriklisLazarides-dev" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/periklis-lazarides-33a573326/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a class="icon-link" href="mailto:periklis.lazarides@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.4l10 6.25L22 6.4V6H2zm20 2.75-9.47 5.92a1 1 0 0 1-1.06 0L2 8.75V18h20V8.75z"/></svg>
+        </a>
+      </div>
     </div>
+  </nav>
 
+  <header class="hero">
+    <div class="l-container hero__grid">
+      <div>
+        <h1>Periklis Lazarides</h1>
+        <p class="label hero__role">Graphics &amp; Rendering Programmer</p>
+        <p class="hero__pitch">I build real-time renderers in Vulkan and C++, and study how neural networks represent 3D geometry.</p>
+        <p class="hero__status">MSc Artificial Intelligence · open to graphics, game development roles and PhD positions in neural rendering</p>
+      </div>
 
-    <div class="center-box">
-      <p>
-      <a href="#AboutMe" class="contact-btn">About Me</a> 
-      <a href="#Projects" class="contact-btn">Projects</a> 
-      <a href="#GameMods" class="contact-btn">Game Mods</a> 
-      <a href="#TechnicalSkills" class="contact-btn">Technical Skills</a>
-      <a href="#Contact" class="contact-btn">Contact</a>  
-      </p>
+      <figure class="viewport">
+        <div class="viewport__bar">
+          <span class="viewport__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="label">vulkan_renderer · viewport</span>
+        </div>
+        <a href="Vulkan.html" aria-label="Vulkan Renderer project">
+          <video width="654" height="466"
+                 autoplay muted loop playsinline preload="auto"
+                 poster="Images/video/vulkan-renderer-poster.jpg"
+                 aria-label="Live capture of my Vulkan renderer: a Spartan model on a brick floor under point lights, with textures, skybox and post-processing changed at runtime">
+            <source src="Images/video/vulkan-renderer.mp4" type="video/mp4">
+          </video>
+        </a>
+        <figcaption>Live capture · Blinn-Phong · shadow mapping · bindless textures · post-processing</figcaption>
+      </figure>
     </div>
-
   </header>
 
+  <main id="main">
 
-  <div class="container">
-    <section class="about">
-      
-      <div id="AboutMe"><h2>About Me</h2></div>
-      <h3>Academic Career:</h3>
-      <p>Hello! I'm a graduate of the <b>Computer Games Programming</b> course at <b>De Montfort University</b>,
-         where I developed a strong foundation in game development, Shader Progamming and Rendering, systems programming, and AI-driven gameplay.
-          Throughout my studies, I’ve worked extensively with Open GL, Unity and Unreal Engine, building a range of gameplay systems, prototypes, and AI behavior models.
-          I am also independently learning <b>Vulkan</b> to further deepen and improve my optimisation, rendering and code structuring skills <br><br>
-          Currently pursuing Master’s degree in <b>Artificial Intelligence</b>, aiming to deepen my understanding of intelligent systems and apply advanced AI techniques in the context of game development and Rendering.
-          I'm passionate about creating immersive, systems-driven gameplay experiences and exploring how AI can shape the future of interactive storytelling and opponent behavior as well as how ML libraries can be used
-          in the context of computer graphics.</p>   
-    </section>
-    <h3>Work experience:</h3>
-    <p>
-      During my internship at <a href="https://cyens.org.cy/about/cyens-in-short/" target="_blank">CYENS</a> as part of the ITICA team,
-       I had the opportunity to work closely with immersive technologies and contribute to VR-focused projects.
-        This experience strengthened my understanding of virtual reality development,
-         documenting/analysing data, and integrating user input systems.
-          I also gained practical skills in Unity, VR interaction design, and troubleshooting hardware–software integration issues.
-           Overall, the internship gave me hands-on experience with real-world VR
-            workflows and deepened my confidence in developing intuitive and engaging immersive applications.<br><br>
-    </p>
-    <h3>Future Goals:</h3>
-    <p>
-      I hope that after completing my Master’s degree, I will be able to pursue a PhD to further develop my understanding,
-       skills, and learning abilities, ultimately reaching a point where I can confidently learn anything I set my mind to.<br><br>
-       I am currently learning <b>Vulkan</b> and exploring machine learning libraries used for computer graphics as personal projects to expand my technical skill set.
-       I also aim to get a PhD position in the field of computer graphics with AI / Neural Rendering.
-    </p>
-
-    <div id="Projects"><h2>Projects</h2></div>
-    <section class="projects">
-      <div class="projects">
-
-        <div class="project">
-          <h3 class="centered-text">Vulkan Renderer (In Development)</h3>
-          
-          <div class="center-box">
-            <div class="tag">Vulkan C++</div>
-          </div>
-
-          <p class="centered-text">The main focus of this personal project is to learn the Vulkan API,
-            gain a better understanding of rendering/shader programming at a low level, improve my C++ skills and most importantly, 
-            use it for my <b>Thesis Project: Neural SDFs for Mesh Reconstruction</b>  
-
-          </p>
-          <img src="Images/VulkanImg/CurrentState.png" style="display:block; margin-top:10px; margin-left:25px; margin-bottom:10px; border-radius: 8px;" width="350" height="200">
-          <div class="center-box">
-            <a href="Vulkan.html" class="contact-btn">View Project</a>
-          </div>
-          
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="l-container">
+        <div class="section__head">
+          <h2 id="work-title">Rendering &amp; research</h2>
         </div>
 
-        <div class="project">
-          <h3 class="centered-text">Shader Programming</h3>
+        <div class="card-grid card-grid--featured">
 
+          <a class="card" href="Vulkan.html">
+            <div class="card__media">
+              <img src="Images/thumbs/vulkan-renderer.jpg" width="1600" height="814" loading="lazy" decoding="async"
+                   alt="Vulkan renderer scene with ImGui panels">
+              <span class="card__status">In development</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Vulkan Renderer</h3>
+              <p class="card__text">A renderer written from scratch on Vulkan 1.3: dynamic rendering, bindless textures, compute post-processing, shadow mapping with PCF, and my own entity component system driven from ImGui.</p>
+              <ul class="chips" aria-label="Technologies">
+                <li class="chip">Vulkan 1.3</li><li class="chip">C++</li><li class="chip">GLSL</li><li class="chip">ImGui</li>
+              </ul>
+              <span class="label card__meta">Solo · Personal project · ongoing</span>
+            </div>
+          </a>
 
-          <div class="center-box">
-            <div class="tag">OpenGL C++</div>
-          </div>
+          <article class="card">
+            <div class="card__media">
+              <img src="Images/thumbs/neural-sdf.jpg" width="1200" height="516" loading="lazy" decoding="async"
+                   alt="Reconstruction error heatmaps on a human mesh for SIREN 1e-4, ReLU 1e-4 and ReLU 1e-3">
+              <span class="card__status">Write-up soon</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Neural SDFs for 3D Mesh Reconstruction</h3>
+              <p class="card__text">MSc dissertation. A mesh reconstruction pipeline built on neural signed distance fields, comparing how the MLP's activation function (SIREN vs ReLU) affects reconstruction quality.</p>
+              <ul class="chips" aria-label="Technologies">
+                <li class="chip">Python</li><li class="chip">Neural SDF</li><li class="chip">SIREN</li>
+              </ul>
+              <span class="label card__meta">Solo · MSc dissertation</span>
+            </div>
+          </article>
 
-          <p class="centered-text">This was part of my 3rd year Computer Graphics module.
-            The main goal of the project was to implement various shaders using GLSL within a C++ OpenGL in house renderer framework provided by my tutors,
-            in order to optimise the rendering pipeline and scene.
-            
-          </p>
-          <img src="Images\ShaderProgramming\Screenshot 2026-01-05 210001.png" style="display:block; margin-top:10px; margin-left:50px; margin-bottom:10px; border-radius: 8px;" width="300" height="200">
-          <div class="center-box">
-          <a href="Shader_Programming.html" class="contact-btn">View Project</a>
-          </div>
+          <a class="card" href="Shader_Programming.html">
+            <div class="card__media">
+              <img src="Images/thumbs/shader-programming.jpg" width="795" height="590" loading="lazy" decoding="async"
+                   alt="OpenGL scene rendered with custom GLSL shaders">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Shader Programming</h3>
+              <p class="card__text">GLSL shaders inside a C++ OpenGL framework: deferred rendering and lighting, shadow mapping, compute shaders, tessellation and geometry shaders, and post-processing.</p>
+              <ul class="chips" aria-label="Technologies">
+                <li class="chip">OpenGL</li><li class="chip">GLSL</li><li class="chip">C++</li>
+              </ul>
+              <span class="label card__meta">Solo · BSc coursework, 3rd year</span>
+            </div>
+          </a>
+
+          <a class="card" href="RayTracer.html">
+            <div class="card__media">
+              <img src="Images/thumbs/ray-tracer.jpg" width="600" height="600" loading="lazy" decoding="async"
+                   alt="Ray traced reflective spheres on a checkered floor">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Ray Tracer</h3>
+              <p class="card__text">A CPU ray tracer in C++: diffuse lighting with shadows, recursive reflections, a procedural checkered floor, multi-sample anti-aliasing and gamma-corrected output.</p>
+              <ul class="chips" aria-label="Technologies">
+                <li class="chip">C++</li><li class="chip">Ray tracing</li>
+              </ul>
+              <span class="label card__meta">Solo · Personal project</span>
+            </div>
+          </a>
+
         </div>
 
+        <h3 class="section__sub">Gameplay, AI &amp; tools</h3>
 
-        
-        <div class="project">
-          <h3 class="centered-text">Neural Signed Distance Fields for 3D Mesh Reconstruction</h3>
+        <div class="card-grid">
 
+          <a class="card" href="IronReign.html">
+            <div class="card__media">
+              <img src="Images/thumbs/iron-reign.jpg" width="1000" height="562" loading="lazy" decoding="async"
+                   alt="Iron Reign gameplay screenshot">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Iron Reign · AI for Fighting Games</h3>
+              <p class="card__text">A 2D fighting game whose CPU opponents use finite state machines, fuzzy state machines and decision trees, including one that learns the player's habits.</p>
+              <ul class="chips" aria-label="Technologies"><li class="chip">Unity</li><li class="chip">C#</li></ul>
+              <span class="label card__meta">Solo · BSc thesis · 8 weeks</span>
+            </div>
+          </a>
 
-          <div class="center-box">
-            <div class="tag">Python</div>
-          </div>
+          <a class="card" href="DeadAim.html">
+            <div class="card__media">
+              <img src="Images/thumbs/dead-aim.jpg" width="1000" height="562" loading="lazy" decoding="async"
+                   alt="Dead Aim gameplay screenshot">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Dead Aim</h3>
+              <p class="card__text">A 1v1 third-person multiplayer shooter over Steam. I built the weapon system, game loop and character.</p>
+              <ul class="chips" aria-label="Technologies"><li class="chip">Unreal Engine 5</li><li class="chip">C++</li></ul>
+              <span class="label card__meta">Team · BSc group project</span>
+            </div>
+          </a>
 
-          <p class="centered-text">MSc Dissertation. The goal of the study was to make a working Reconstruction pipeline using neural signed distance fields 
-            and determine if the activation function of
-            the MLP makes a differences and if so how? In this case, SIREN and ReLU are compared. This project is finished, need to publish it here.
-            
-          </p>
-          <img src="Images/SDF/SDF.png" style="display:block; margin-top:10px; margin-left:50px; margin-bottom:10px; border-radius: 8px;" width="300" height="200">
-          <div class="center-box">
-          <a href="" class="contact-btn">In progress</a>
-          </div>
+          <a class="card" href="BlindGoalKeeper.html">
+            <div class="card__media">
+              <img src="Images/thumbs/blind-goalkeeper.jpg" width="1000" height="559" loading="lazy" decoding="async"
+                   alt="Blind Goalkeeper VR experiment screenshot">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Blind Goalkeeper Research Template</h3>
+              <p class="card__text">VR and video versions of a goalkeeper experiment, built to test whether VR training is viable for goalkeepers.</p>
+              <ul class="chips" aria-label="Technologies"><li class="chip">Unity</li><li class="chip">C#</li><li class="chip">VR</li></ul>
+              <span class="label card__meta">Internship · CYENS</span>
+            </div>
+          </a>
+
+          <a class="card" href="VRGuide.html">
+            <div class="card__media">
+              <img src="Images/thumbs/npc-guide.jpg" width="550" height="361" loading="lazy" decoding="async"
+                   alt="NPC Guide Tool screenshot in Unity">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">NPC Guide Tool</h3>
+              <p class="card__text">Turns any character into a guide NPC driven by a state machine and NavMesh, with routes and attractions configured through scriptable objects.</p>
+              <ul class="chips" aria-label="Technologies"><li class="chip">Unity</li><li class="chip">C#</li></ul>
+              <span class="label card__meta">Internship · CYENS</span>
+            </div>
+          </a>
+
+          <a class="card" href="ANNCNN.html">
+            <div class="card__media">
+              <img src="Images/thumbs/ann-cnn.jpg" width="1000" height="487" loading="lazy" decoding="async"
+                   alt="ANN and CNN classification results">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">ANN &amp; CNN for Classification</h3>
+              <p class="card__text">Baseline and improved ANN and CNN models on Fashion-MNIST, compared on accuracy and training behaviour.</p>
+              <ul class="chips" aria-label="Technologies"><li class="chip">Python</li><li class="chip">Keras</li></ul>
+              <span class="label card__meta">Solo · MSc coursework</span>
+            </div>
+          </a>
+
+          <a class="card" href="Spacewalker.html">
+            <div class="card__media">
+              <img src="Images/thumbs/spacewalker.jpg" width="1000" height="497" loading="lazy" decoding="async"
+                   alt="Spacewalker gameplay screenshot">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Spacewalker</h3>
+              <p class="card__text">An endless platformer inspired by Jump King, with procedurally generated platforms instead of a fixed level.</p>
+              <ul class="chips" aria-label="Technologies"><li class="chip">Unity</li><li class="chip">C#</li></ul>
+              <span class="label card__meta">Solo · Personal project</span>
+            </div>
+          </a>
+
         </div>
-
-        <div class="project">
-          <h3 class="centered-text">Iron Reign / AI for Fighting Games</h3>
-          
-          <div class="center-box">
-            <div class="tag">Unity C#</div>
-          </div>
-
-          <p class="centered-text">A fighting game I made for my undergraduate thesis using Unity Engine.
-             The main focus of the project was to develop the CPUs (opponents)
-              of the game using AI techniques like Finite State Machine, Fuzzy State Machine and Deceision Trees.</p>
-          <img src="Images\IRONREIGN.png" style="display:block; margin-top:10px; margin-left:25px; margin-bottom:10px; border-radius: 8px;" width="350" height="200">
-          <div class="center-box">
-            <a href="IronReign.html" class="contact-btn">View Project</a>
-          </div>
-          
-        </div>
-
-
-
-        <div class="project">
-          <h3 class="centered-text">Ray Tracer</h3>
-
-
-          <div class="center-box">
-            <div class="tag">C++</div>
-          </div>
-
-          <p class="centered-text">This is a Ray Tracer I made in C++ as a personal project.
-            It currently supports spheres, diffuse lighting with shadows, recursive reflections on spheres and floor, procedural checkered floor,
-            anti-aliasing via multiple rays per pixel (SPP) and gamma corrected output.
-          </p>
-          <img src="Images\RayTracer\RayTracerOutput.png" style="display:block; margin-top:10px; margin-left:100px; margin-bottom:10px; border-radius: 8px;" width="200" height="200">
-          <div class="center-box">
-          <a href="RayTracer.html" class="contact-btn">View Project</a>
-          </div>
-        </div>
-
-
-        <div class="project">
-          <h3 class="centered-text">Spacewalker</h3>
-
-
-          <div class="center-box">
-            <div class="tag">Unity C#</div>
-          </div>
-
-          <p class="centered-text">This is a small personal project made in my second year as a student.
-            Spacewalker is inspired by the popular game "Jump Knight", but instead of having a fixed level, it randomly generates obstacles,
-            making it theoretically infinite and give it an "arcade" feel.
-          </p>
-          <img src="Images\SpaceWalker2.png" style="display:block; margin-top:10px; margin-left:25px; margin-bottom:10px; border-radius: 8px;" width="350" height="200">
-          <div class="center-box">
-          <a href="Spacewalker.html" class="contact-btn">View Project</a>
-          </div>
-        </div>
-
-        <div class="project">
-          <h3 class="centered-text">CNN and ANN for Classification</h3>
-
-          <div class="center-box">
-            <div class="tag">Keras / Python</div>
-          </div>
-          <p class="centered-text">Implemented CNN and ANN using the MNIST-fasion dataset. Aim of the project was to make 
-            2 basic implementations of the models and 2 improved versions to measure their
-            differences in performance.
-            This was part of my Master’s degree (Neural Systems).
-          </p>
-
-          <img src="Images/ANNCNN/Screenshot 2025-11-22 190217.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="350" height="200">
-
-          <div class="center-box">
-            <a href="ANNCNN.html" class="contact-btn">View Project</a>
-          </div>
-          
-        </div>
-
-        <div class="project">
-          <h3 class="centered-text">Dead Aim</h3>
-
-          <div class="center-box">
-            <div class="tag">Unreal Engine 5 C++</div>
-          </div>
-
-          <p class="centered-text">
-            3rd person multiplayer shooter game I made during my second year as a student as a groupwork.<br><br>
-            Multiplayer was possible using the Unreal Engine Steam plugin. Typical 1v1 format, whoever gets 5 kills first wins.
-          </p>
-          <img src="Images\DeadAim.png" style="display:block; margin-top:10px; margin-left:25px; margin-bottom:10px; border-radius: 8px;" width="350" height="200">
-
-          <div class="center-box">
-            <a href="DeadAim.html" class="contact-btn">View Project</a>
-          </div>
-          
-        </div>
-
-        <div class="project">
-          <h3 class="centered-text">Blind Goal Keeper Research Template</h3>
-
-          <div class="center-box">
-            <div class="tag">Unity C#</div>
-          </div>
-
-          <p class="centered-text">Projects I made during my Internship in CYENS.
-            The main goal of the project is to make 2 simulations for goalkeepers (VR, Video). The goal of the research is to compare these two versions,
-             to determine wether training goalkeepers with VR experiences is viable.
-          </p>
-          <img src="Images\BlindGoalKeeper.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="350" height="200">
-
-
-          <div class="center-box">
-            <a href="BlindGoalKeeper.html" class="contact-btn">View Project</a>
-          </div>
-          
-        </div>
-
-        <div class="project">
-          <h3 class="centered-text">NPC Guide Tool</h3>
-
-          <div class="center-box">
-            <div class="tag">Unity C#</div>
-          </div>
-
-          <p class="centered-text">
-            Project I made during my CYENS summer Internship.
-            A tool that can be added to a character to automatically make them a "guide" npc with various customisable configurations.
-             Using Unity's scriptable object to construct desired locations/attractions for the guide.
-          </p>
-
-          <img src="Images/VRGuideImages/Screenshot 2025-11-22 005159.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="350" height="200">
-
-          <div class="center-box">
-            <a href="VRGuide.html" class="contact-btn">View Project</a>
-          </div>
-          
-        </div>
-
-        <!-- Add more project cards as needed -->
       </div>
     </section>
 
-<section class="Game Mod showcase">
-  <div id="GameMods"><h2>Game Mods</h2></div>
-  <section class="mods">
-        <div class="mod">
-          <div class="mod-title">
-            <h3 class="centered-text">Flash From LoL / The Binding of Isaac: Rebirth</h3>
-          </div>
-          
-          <div class="center-box">
-            <div class="tag">Lua</div>
-          </div>
-
-
-
-          <p class="centered-text">
-            This mod adds the "Flash" spell from League of Legends as an active item in the Binding of Isaac: Rebirth,
-             introducing unique properties in gameplay.
-          </p>
-          <img src="Images\flashtboi.png" style="display:block; margin-top:10px; margin-left:50px; margin-bottom:10px; border-radius: 8px;" width="150" height="200">
-
-          <div class="center-box">
-            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3497794911" class="contact-btn" target="_blank">View Mod Steam Page</a>
-          </div>
-          
+    <section class="section" id="mods" aria-labelledby="mods-title">
+      <div class="l-container">
+        <div class="section__head">
+          <h2 id="mods-title">Game mods</h2>
+          <p>Published on the Steam Workshop.</p>
         </div>
-
-        <div class="mod">
-          <div class="mod-title"><h3 class="centered-text">Sonic Sneakers / The Binding of Isaac: Rebirth</h3></div>
-          
-          <div class="center-box">
-            <div class="tag">Lua</div>
-          </div>
-
-          <p class="centered-text">
-            This mod adds the "Sonic Sneakers" as a passive item in the Binding of Isaac: Rebirth, granting the player maximun speed upon picking up.
-          </p>
-          <img src="Images/sonicsneakers.png" style="display:block; margin-top:10px; margin-left:35px; margin-bottom:10px; border-radius: 8px;" width="180" height="200">
-          
-          <div class="center-box">
-            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3375727969" class="contact-btn" target="_blank">View Mod Steam Page</a>
-          </div>
-          
-        </div>
-
-        <div class="mod">
-          <div class="mod-title"><h3 class="centered-text">One Punch Man / <br>Terraria</h3></div>
-
-          <div class="center-box">
-            <div class="tag">C#</div>
-          </div>
-          <p class="centered-text">
-            This mods adds the iconic "Serious Punch" from the Anime "One Punch Man" is added as a weapon that instantly kills anything in one punch.
-          </p>
-          <img src="Images/opm.png" style="display:block; margin-top:15px; margin-left:35px; margin-bottom:10px; border-radius: 10px;" width="180" height="200">
-
-          <div class="center-box">
-            <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3179728971" class="contact-btn" target="_blank">View Mod Steam Page</a>
-          </div>
-          
-        </div>
-  </section>
-</section>
-
-
-
-
-
-
-<section class="Technical Skills">
-  <div id="TechnicalSkills"><h2>Technical Skills</h2></div>
-  <p>
-      <table class="excel-table">
-    <tr>
-      <td><b>Programming Languages</b></td>
-      <td>C++, C#, Lua, GLSL, Python, JavaScript</td>
-    </tr>
-    <tr>
-      <td><b>Game Development Skills</b></td>
-      <td>Shader Programming, Rendering, Unity, Unreal Engine 5, AI behaviour programming</td>
-    </tr>
-    <tr>
-      <td><b>Other Technical Strengths</b></td>
-      <td>Version control, Debugging & optimization, Performance profiling, UX/UI design basics</td>
-    </tr>
-    <tr>
-      <td><b>Personal learnings/projects </b></td>
-      <td>Vulkan, Machine learning libraries used for computer graphics</td>
-    </tr>
-</table>
-  </p>
-</section>
-    <section class="contact">
-      <div id="Contact"><h2>Contact</h2></div>
-      <a href="mailto:periklis.lazarides@gmail.com" target="_blank">Email</a> ⸱
-
-      <a href="https://www.linkedin.com/in/periklis-lazarides-33a573326/" target="_blank">LinkedIn</a> ⸱
-
-      <a href="https://github.com/PeriklisLazarides-dev" target="_blank">Github</a> 
-
+        <ul class="mod-list">
+          <li>
+            <a class="mod" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3497794911" target="_blank" rel="noopener">
+              <img src="Images/flashtboi.png" alt="" width="56" height="56" loading="lazy">
+              <span>
+                <span class="mod__title">Flash · The Binding of Isaac</span>
+                <span class="mod__text">League of Legends' Flash as an active item · Lua</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="mod" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3375727969" target="_blank" rel="noopener">
+              <img src="Images/sonicsneakers.png" alt="" width="56" height="56" loading="lazy">
+              <span>
+                <span class="mod__title">Sonic Sneakers · The Binding of Isaac</span>
+                <span class="mod__text">Passive item granting maximum speed · Lua</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="mod" href="https://steamcommunity.com/sharedfiles/filedetails/?id=3179728971" target="_blank" rel="noopener">
+              <img src="Images/opm.png" alt="" width="56" height="56" loading="lazy">
+              <span>
+                <span class="mod__title">One Punch Man · Terraria</span>
+                <span class="mod__text">The "Serious Punch" as a one-hit weapon · C#</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
-  </div>
 
-  <footer>
-    <p>&copy; 2026 Periklis Lazarides. All rights reserved.</p>
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="l-container">
+        <div class="section__head">
+          <h2 id="skills-title">Technical skills</h2>
+        </div>
+        <div class="skills">
+          <div class="skill-row">
+            <h3>Graphics</h3>
+            <ul class="skill-list">
+              <li>Vulkan</li><li>OpenGL</li><li>GLSL</li><li>Compute shaders</li>
+              <li>Shadow mapping</li><li>Deferred rendering</li><li>Tessellation</li><li>Ray tracing</li>
+            </ul>
+          </div>
+          <div class="skill-row">
+            <h3>Languages</h3>
+            <ul class="skill-list">
+              <li>C++</li><li>C#</li><li>Python</li><li>GLSL</li><li>Lua</li><li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="skill-row">
+            <h3>Engines &amp; ML</h3>
+            <ul class="skill-list">
+              <li>Unity</li><li>Unreal Engine 5</li><li>Neural SDFs</li><li>Keras</li><li>AI behaviour</li>
+            </ul>
+          </div>
+          <div class="skill-row">
+            <h3>Tools</h3>
+            <ul class="skill-list">
+              <li>RenderDoc</li><li>CMake</li><li>Git / GitHub</li><li>ImGui</li><li>Profiling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="l-container">
+        <div class="section__head">
+          <h2 id="about-title">About</h2>
+        </div>
+        <div class="about">
+          <div class="about__prose">
+            <h3>Academic background</h3>
+            <p>I graduated in <b>Computer Games Programming</b> from <b>De Montfort University</b>, where I built a foundation in game development, shader programming and rendering, systems programming and AI-driven gameplay, working with OpenGL, Unity and Unreal Engine. I'm now completing a Master's in <b>Artificial Intelligence</b>, and I'm interested in how machine learning can be applied to computer graphics.</p>
+
+            <h3>Work experience</h3>
+            <p>During my internship with the ITICA team at <a href="https://cyens.org.cy/about/cyens-in-short/" target="_blank" rel="noopener">CYENS</a> I built VR research tools in Unity: interaction design, user input systems, documenting and analysing experiment data, and troubleshooting hardware–software integration.</p>
+
+            <h3>Future goals</h3>
+            <p>I'm learning <b>Vulkan</b> in depth and exploring the machine learning libraries used in computer graphics. I aim to pursue a PhD in computer graphics with a focus on AI and neural rendering.</p>
+          </div>
+
+          <dl class="facts">
+            <div>
+              <dt class="label">Education</dt>
+              <dd>MSc Artificial Intelligence<span>Dissertation: Neural SDFs for mesh reconstruction</span></dd>
+            </div>
+            <div>
+              <dt class="label">&nbsp;</dt>
+              <dd>BSc Computer Games Programming<span>De Montfort University</span></dd>
+            </div>
+            <div>
+              <dt class="label">Experience</dt>
+              <dd>Intern, ITICA team<span>CYENS · VR research tools</span></dd>
+            </div>
+            <div>
+              <dt class="label">Focus</dt>
+              <dd>Real-time rendering · neural 3D representations</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="l-container contact">
+        <div>
+          <h2 id="contact-title">Get in touch</h2>
+          <p>Open to graphics and rendering programmer roles, PhD positions in neural rendering and 3D Gaussian Splatting, as well as industry positions in Game Development.</p>
+        </div>
+        <div class="contact__links">
+          <a class="btn btn--primary" href="mailto:periklis.lazarides@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.4l10 6.25L22 6.4V6H2zm20 2.75-9.47 5.92a1 1 0 0 1-1.06 0L2 8.75V18h20V8.75z"/></svg>
+            periklis.lazarides@gmail.com
+          </a>
+          <a class="btn btn--ghost" href="https://github.com/PeriklisLazarides-dev" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/periklis-lazarides-33a573326/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="l-container">
+      <p>&copy; 2026 Periklis Lazarides</p>
+    </div>
   </footer>
 
   <script src="Scripts.js"></script>
-
-
-
 </body>
 </html>

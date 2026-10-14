@@ -1,25 +1,65 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="Images/gitprofile-modified.png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Periklis Lazarides - ANN/CNN</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANN/CNN · Periklis Lazarides</title>
+  <meta name="description" content="Comparing baseline and improved ANN and CNN classifiers on Fashion-MNIST with Keras.">
+  <meta name="theme-color" content="#0e1014">
+  <link rel="canonical" href="https://periklislazarides-dev.github.io/PeriklisLazarides-Portfolio/ANNCNN.html">
 
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ANN/CNN · Periklis Lazarides">
+  <meta property="og:description" content="Comparing baseline and improved ANN and CNN classifiers on Fashion-MNIST with Keras.">
+  <meta property="og:url" content="https://periklislazarides-dev.github.io/PeriklisLazarides-Portfolio/ANNCNN.html">
+  <meta property="og:image" content="https://periklislazarides-dev.github.io/PeriklisLazarides-Portfolio/Images/thumbs/ann-cnn.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="Images/gitprofile.png">
+  <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="style.css">
-
-  
 </head>
 <body>
-  <header> 
-    <h1>ANN and CNN for Classification</h1>
-    <p>Project made in my Master's Artificial Intelligence</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="l-container site-nav__inner">
+      <a class="site-nav__brand" href="index.html">
+        <img src="Images/gitprofile.png" alt="" width="28" height="28">
+        <span>Periklis Lazarides</span>
+      </a>
+      <ul class="site-nav__links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#mods">Mods</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="site-nav__social">
+        <a class="icon-link" href="https://github.com/PeriklisLazarides-dev" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/periklis-lazarides-33a573326/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a class="icon-link" href="mailto:periklis.lazarides@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.4l10 6.25L22 6.4V6H2zm20 2.75-9.47 5.92a1 1 0 0 1-1.06 0L2 8.75V18h20V8.75z"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="l-container">
+      <p class="label breadcrumb"><a href="index.html#work">Projects</a> / <span aria-current="page">ANN and CNN for Classification</span></p>
+      <h1>ANN and CNN for Classification</h1>
+      <p class="page-hero__sub">Project made in my Master's Artificial Intelligence</p>
+    </div>
   </header>
 
 
-<div class="container">
-    <section class="about">
+<main id="main" class="l-container prose">
+    <section>
         <h2>Main goals of the Project:</h2> 
         
         <ul>
@@ -37,9 +77,9 @@
             <li>Test and use different methods for structuring and training the models.</li>
 
         </ul>
-        <img src="Images/ANNCNN/Picture3.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="150">
-        <img src="Images/ANNCNN/Picture1.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="750" height="300">
-        <img src="Images/ANNCNN/Picture2.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="750" height="300">
+        <img src="Images/ANNCNN/Picture3.png" alt="ANN and CNN for Classification: Data Handling" class="fig-md" width="427" height="116" loading="lazy" decoding="async">
+        <img src="Images/ANNCNN/Picture1.png" alt="ANN and CNN for Classification: Data Handling (2)" width="376" height="161" loading="lazy" decoding="async">
+        <img src="Images/ANNCNN/Picture2.png" alt="ANN and CNN for Classification: Data Handling (3)" width="378" height="139" loading="lazy" decoding="async">
 
         <h2>Artificial Neural Network (ANN)</h2>
 
@@ -51,9 +91,9 @@
 
         <p>Result: Improved ANN performs noticeably better than the basic ANN.</p>
 
-        <img src="Images/ANNCNN/Picture4.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="150">
-        <img src="Images/ANNCNN/Picture5.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="250">
-        <img src="Images/ANNCNN/Picture6.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="750" height="100">
+        <img src="Images/ANNCNN/Picture4.png" alt="ANN and CNN for Classification: Artificial Neural Network (ANN)" class="fig-md" width="406" height="120" loading="lazy" decoding="async">
+        <img src="Images/ANNCNN/Picture5.png" alt="ANN and CNN for Classification: Artificial Neural Network (ANN) (2)" class="fig-md" width="406" height="218" loading="lazy" decoding="async">
+        <img src="Images/ANNCNN/Picture6.png" alt="ANN and CNN for Classification: Artificial Neural Network (ANN) (3)" width="514" height="76" loading="lazy" decoding="async">
 
 
         <h2>Convolutionary Neural Network (CNN)</h2>
@@ -67,13 +107,13 @@
 
         <p>Result is that the improved CNN outperforms the basic CNN as well as both ANN and improved ANN models.</p>
 
-        <img src="Images/ANNCNN/Picture7.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="250">
-        <img src="Images/ANNCNN/Picture8.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="400">
+        <img src="Images/ANNCNN/Picture7.png" alt="ANN and CNN for Classification: Convolutionary Neural Network (CNN)" class="fig-md" width="406" height="185" loading="lazy" decoding="async">
+        <img src="Images/ANNCNN/Picture8.png" alt="ANN and CNN for Classification: Convolutionary Neural Network (CNN) (2)" class="fig-md" width="358" height="263" loading="lazy" decoding="async">
 
         <h2>Results</h2>
 
-        <img src="Images/ANNCNN/Screenshot 2025-11-22 190217.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="1000" height="550">
-        <img src="Images/ANNCNN/Picture9.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="200">
+        <img src="Images/ANNCNN/Screenshot 2025-11-22 190217.png" alt="ANN and CNN for Classification: Results" width="1398" height="681" loading="lazy" decoding="async">
+        <img src="Images/ANNCNN/Picture9.png" alt="ANN and CNN for Classification: Results (2)" class="fig-md" width="290" height="123" loading="lazy" decoding="async">
         
         <p>Screenshots provided: Confusion Matrices of all models, Loss and Accuracy graphs of all models and the highest numbers achieved during training and validating.</p>
         <p>Basic CNN and ANN have very similar results around ~89% accuracy while improved ANN reaches ~90% and improved CNN reaching up to ~93% accuracy.</p>
@@ -102,13 +142,16 @@
 
         <h2>Extra Inovation</h2>
         <p>Using a different dataset with human faces that show emotions, I was able to train a CNN and take pictures of my self with a camera to test the models accuracy.</p>
-        <a href="index.html" class="contact-btn">Back to main page</a>
+        <p class="back-link"><a class="btn btn--ghost" href="index.html#work">&larr; All projects</a></p>
     </section>
-</div>
+</main>
 
-<footer>
-    <p>&copy; 2026 Periklis Lazarides. All rights reserved.</p>
-</footer>
+<footer class="site-footer">
+    <div class="l-container">
+      <p>&copy; 2026 Periklis Lazarides</p>
+      <p><a href="index.html#contact">Contact</a></p>
+    </div>
+  </footer>
 
   <script src="Scripts.js"></script>
 </body>

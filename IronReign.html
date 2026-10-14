@@ -1,46 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="Images/gitprofile-modified.png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Periklis Lazarides - Iron Reign</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iron Reign · Periklis Lazarides</title>
+  <meta name="description" content="Iron Reign, a 2D fighting game in Unity with CPU opponents built on finite state machines, fuzzy state machines and decision trees.">
+  <meta name="theme-color" content="#0e1014">
+  <link rel="canonical" href="https://periklislazarides-dev.github.io/PeriklisLazarides-Portfolio/IronReign.html">
 
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Iron Reign · Periklis Lazarides">
+  <meta property="og:description" content="Iron Reign, a 2D fighting game in Unity with CPU opponents built on finite state machines, fuzzy state machines and decision trees.">
+  <meta property="og:url" content="https://periklislazarides-dev.github.io/PeriklisLazarides-Portfolio/IronReign.html">
+  <meta property="og:image" content="https://periklislazarides-dev.github.io/PeriklisLazarides-Portfolio/Images/thumbs/iron-reign.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="Images/gitprofile.png">
+  <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="style.css">
-
-  
 </head>
 <body>
-  <header> 
-    <h1>Iron Reign</h1>
-    <p>AI for Fighting Games</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="center-box">
-      <p>
-      <a href="#Introduction">Introduction</a> |
-      <a href="#Game/Project Overview">Game/Project Overview</a> |
-      <a href="#Objectives of the Project">Objectives of the Project</a> |
-      <a href="#Characters">Characters</a> |
-      <a href="#Attack/Defence System">Attack/Defence System</a> |  
-      <a href="#Ingame UI and Stage">Ingame UI and Stage</a> |  
-      <a href="#Audio and Menus">Audio and Menus</a> |  
-      <a href="#Duel Configurations">Duel Configurations</a> | 
-      <a href="#AI CPUs">AI CPUs</a> | 
-      <a href="#Input Device/Controls">Input Device/Controls</a> | 
-      <a href="#Testing and Development">Testing and Development</a> | 
-      <a href="#Critical Reflection">Critical Reflection</a> | 
-      <a href="#Conclusion/Potential Future Updates">Conclusion/Potential Future Updates</a> 
-      
-      </p>
+  <nav class="site-nav" aria-label="Primary">
+    <div class="l-container site-nav__inner">
+      <a class="site-nav__brand" href="index.html">
+        <img src="Images/gitprofile.png" alt="" width="28" height="28">
+        <span>Periklis Lazarides</span>
+      </a>
+      <ul class="site-nav__links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#mods">Mods</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="site-nav__social">
+        <a class="icon-link" href="https://github.com/PeriklisLazarides-dev" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/periklis-lazarides-33a573326/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a class="icon-link" href="mailto:periklis.lazarides@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.4l10 6.25L22 6.4V6H2zm20 2.75-9.47 5.92a1 1 0 0 1-1.06 0L2 8.75V18h20V8.75z"/></svg>
+        </a>
+      </div>
     </div>
+  </nav>
 
+  <header class="page-hero">
+    <div class="l-container">
+      <p class="label breadcrumb"><a href="index.html#work">Projects</a> / <span aria-current="page">Iron Reign</span></p>
+      <h1>Iron Reign</h1>
+      <p class="page-hero__sub">AI for Fighting Games</p>
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#game-project-overview">Game/Project Overview</a></li>
+        <li><a href="#objectives-of-the-project">Objectives of the Project</a></li>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#attack-defence-system">Attack/Defence System</a></li>
+        <li><a href="#ingame-ui-and-stage">Ingame UI and Stage</a></li>
+        <li><a href="#audio-and-menus">Audio and Menus</a></li>
+        <li><a href="#duel-configurations">Duel Configurations</a></li>
+        <li><a href="#ai-cpus">AI CPUs</a></li>
+        <li><a href="#input-device-controls">Input Device/Controls</a></li>
+        <li><a href="#testing-and-development">Testing and Development</a></li>
+        <li><a href="#critical-reflection">Critical Reflection</a></li>
+        <li><a href="#conclusion-potential-future-updates">Conclusion/Potential Future Updates</a></li>
+      </ul>
+    </div>
   </header>
 
 
-<div class="container">
-    <section class="about">
-        <div id="Introduction"></div>
-        <h2>Introduction</h2> 
+<main id="main" class="l-container prose">
+    <section>
+        
+        <h2 id="introduction">Introduction</h2> 
     <p>
         "Iron Reign" was my thesis project for my undergraduate degree in Computer Games Programming.
          Coming from a fighting game backround myself,
@@ -48,10 +84,10 @@
 
          <br><br>
          I had 8 weeks to make this project, a Technical Design Document (TDD), a Game Design Document (GDD) and a presentation. All assets are original and created by me using Aseprite.
-         <img src="Images/IronReign/Screenshot 2025-11-23 160031.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+         <img src="Images/IronReign/Screenshot 2025-11-23 160031.png" alt="Iron Reign: Introduction" width="1331" height="748" loading="lazy" decoding="async">
     </p>
-    <div id="Game/Project Overview"></div>
-    <h2>Game/Project Overview</h2>
+    
+    <h2 id="game-project-overview">Game/Project Overview</h2>
     <p>
         Iron Reign is a traditional, ground based 2D Fighting game inspired from popular fighting game titles such as "Tekken" and "Street Fighter".
         <br><br>
@@ -60,11 +96,11 @@
          <br><br>
          Engine: <b>Unity Engine</b>
 
-         <img src="Images/IRONREIGN.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+         <img src="Images/IRONREIGN.png" alt="Iron Reign: Game/Project Overview" width="1919" height="1079" loading="lazy" decoding="async">
     </p>
 
-    <div id="Objectives of the Project"></div>
-    <h2>Objectives of the Project</h2>
+    
+    <h2 id="objectives-of-the-project">Objectives of the Project</h2>
     <p>
         <ul>
             <li>Make a simple fighting game.</li>
@@ -78,16 +114,16 @@
         </ul>
     </p>
 
-    <div id="Characters"></div>
-    <h2>Characters</h2>
+    
+    <h2 id="characters">Characters</h2>
     <p>This game features the base character type of a fighting game, 
         a balanced character that represents the game fundamentals through their moveset. 
         Meaning players and CPUs use the same character type. Each CPU variation is done with a 
         different AI technique and a different approach in gameplay.</p>
-    <img src="Images/IronReign/image23.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+    <video width="960" height="540" autoplay muted loop playsinline preload="metadata" poster="Images/video/iron-reign-characters-poster.jpg" aria-label="Iron Reign: character select screen"><source src="Images/video/iron-reign-characters.mp4" type="video/mp4"></video>
 
-    <div id="Attack/Defence System"></div>
-    <h2>Attack/Defence System</h2>
+    
+    <h2 id="attack-defence-system">Attack/Defence System</h2>
     <p>
         Attacks were implemented by enabling and disabling the hitboxes/colliders
          from the animation events in Unity. Calculations such as, damage, knockback and others are done within scripts.
@@ -100,33 +136,33 @@
         Iron Reign features a "High/Mid/Low System".
         
             <h3>Punch1: High<br><br></h3>
-            <img src="Images/IronReign/image24.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="150" height="150">
+            <img src="Images/IronReign/image24.gif" alt="Iron Reign: Punch1: High" class="sprite" width="64" height="64" loading="lazy" decoding="async">
                 Fast Attack designed to check opponents and apply preassure. Can start combos if the opponent is in close range.
                  If blocked, the opponent can act slightley faster than the attacker, but it is tricky.
                 Although it is fast, the opponent can crouch/duck under it to evade it, giving them a chance to counter attack. Decent range.<br><br>
 
             <h3>Punch2: Mid</h3>
-            <img src="Images/IronReign/image25.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="150" height="150">
+            <img src="Images/IronReign/image25.gif" alt="Iron Reign: Punch2: Mid" class="sprite" width="64" height="64" loading="lazy" decoding="async">
             Not very fast, not very slow. Unlike Punch1, Punch 2 is designed to check the opponent when they are ducking/crouching.
              Mid hitting moves require the player to be standing to succesfully block the move. Very poor range but high damage.
              If it is blocked the opponent can act faster than the attacker. Can be a combo ender (ex. Punch1 -> Punch1 -> Punch2)
 
             <h3>Kick1: Low</h3>
-            <img src="Images/IronReign/image26.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="200" height="150">
+            <img src="Images/IronReign/image26.gif" alt="Iron Reign: Kick1: Low" class="sprite" width="100" height="60" loading="lazy" decoding="async">
             The only "Low" hitting move in the game. To block this move, the defending player has to hold down/downback to succesfully block the move. If blocked,
             the defender has enough time to counter attack the attacker with whatever move they want. The attack comes out at a time that is barely reactable.
             If the players are concentrated enough, it can be blocked consistenlty. Another propery of the move is that it "ducks/crouches", meaning that it can
             evade "High" hitting moves (ex. Punch1). Good range.
 
             <h3>Kick2: Mid</h3>
-            <img src="Images/IronReign/image27.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="200" height="150">
+            <img src="Images/IronReign/image27.gif" alt="Iron Reign: Kick2: Mid" class="sprite" width="100" height="64" loading="lazy" decoding="async">
             The strongest hitting move in the game. Has the most range and highest attacking power. Of course, the trade-off is that it can be easily countered if the
             defender succesfully blocks the move. It is however a "Mid" hitting move, so it cannot be evaded in any way and has to be blocked. Can be used as
             a zoning tool to keep the opponent away, a counter-attacking move and can outrange all other moves. Players need to be extremely cautious and selective to use this move.
             Very good range, slow startup.
 
             <h3>Iron Reign: Special Ability/Buff</h3>
-            <img src="Images/IronReign/image28.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="150" height="150">
+            <img src="Images/IronReign/image28.gif" alt="Iron Reign: Special Ability/Buff" class="sprite" width="64" height="64" loading="lazy" decoding="async">
             Iron Reign Special ability is designed to grant the user "damage on block", meaning that if the opponent blocks succesfully a move, they will take up to 50% of the
             moves damage. Of course the buff is not active for a long time and acts as a temporary aggressive buff. When using the ability, the user is vulnerable to incoming attacks
             so players need to activate it in a reasonable moment.
@@ -139,35 +175,35 @@
     To deepen this concept, I made the 2 kicking moves extend the attackers hitbox, resulting in the opponent having a chance to hit the attackers leg during their animation.
     This tiny detail adds a lot more complexity to the neutral state of the game.
 
-    <div id="Ingame UI and Stage"></div>
-    <h2>Ingame UI and Stage</h2>
+    
+    <h2 id="ingame-ui-and-stage">Ingame UI and Stage</h2>
     Typical In-game fighting game UI. Made using the canvas feature in Unity,
      the UI includes the health bars of the characters, round timer and the special ability meter.
-    <img src="Images/IronReign/Picture1.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+    <img src="Images/IronReign/Picture1.png" alt="Iron Reign: Ingame UI and Stage" width="539" height="303" loading="lazy" decoding="async">
     <br><br>
     Special ability meter is active for 10 seconds while the bar depletes and flashes to indicate the buff being active.
-    <img src="Images/IronReign/image31.gif" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="500" height="500">
+    <video class="fig-md" width="702" height="702" autoplay muted loop playsinline preload="metadata" poster="Images/video/iron-reign-special-meter-poster.jpg" aria-label="Iron Reign: special ability meter depleting and flashing while the buff is active"><source src="Images/video/iron-reign-special-meter.mp4" type="video/mp4"></video>
 
     <h3>Stage Hazard and Camera Movement</h3>
     At the edges of the stage, special tiles called “Deadzones” are placed. 
     Being on them makes your character take more damage (2x) from any source of damage and some attacks can even become lethal on hit (kick2).
     Health UI changes to Red to indicate that the player is in danger.
     Traditional fighting game camera moving smoothly and scaling depending on the distance of the characters.
-    <img src="Images/IronReign/Picture4.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+    <img src="Images/IronReign/Picture4.png" alt="Iron Reign: Stage Hazard and Camera Movement" width="480" height="270" loading="lazy" decoding="async">
 
-    <div id="Audio and Menus"></div>
-    <h2>Audio and Menus</h2>
+    
+    <h2 id="audio-and-menus">Audio and Menus</h2>
     Very simple and easy to understand UI menus.
     Standard Fighting Game sounds like blocking/hitting, announcer etc. Music was AI generated using Udio. Free sound effects from freesound.
     <br><br>
     Audio menu fetures master, music and SFX sliders.
-    <img src="Images/IronReign/Picture5.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="300" height="300">
+    <img src="Images/IronReign/Picture5.png" alt="Iron Reign: Audio and Menus" class="fig-md" width="195" height="184" loading="lazy" decoding="async">
     Controls menu acts as a guide on how to play and explaining some key features of the game/game mechanics.
-    <img src="Images/IronReign/Picture7.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="900" height="500">
+    <img src="Images/IronReign/Picture7.png" alt="Iron Reign: Audio and Menus (2)" width="943" height="483" loading="lazy" decoding="async">
     <br><br>
 
-    <div id="Duel Configurations"></div>
-    <h2>Duel Configurations</h2>
+    
+    <h2 id="duel-configurations">Duel Configurations</h2>
     Character selection sceen allows:
     <ul> 
         <li>Player vs CPU</li>
@@ -178,20 +214,20 @@
     Player and CPU scripts are independant on each other giving us the opportunity to have CPUs fight against each other.
     <br><br>
 
-    <div id="AI CPUs"></div>
-    <h2>AI CPUs</h2>
+    
+    <h2 id="ai-cpus">AI CPUs</h2>
     Iron Reign Prototype features 4 different types of CPU. Each CPU has a different playstyle and difficulty.<br><br>
     FSM CPU: Standard Implementation of a Finite State Machine. The “base” template of the CPUs. Basic and kind of random gameplay.
-    <img src="Images/IronReign/Picture8.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="180" height="200"><br><br>
+    <img src="Images/IronReign/Picture8.png" alt="Iron Reign: AI CPUs" class="fig-sm" width="227" height="259" loading="lazy" decoding="async"><br><br>
     FuSM CPU: Fuzzy State Machine implementation. Plays Offence and Defence depending on the amount of health it has, and how much time has passed since it got hit.
-    <img src="Images/IronReign/Picture9.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="180" height="200"><br><br>
+    <img src="Images/IronReign/Picture9.png" alt="Iron Reign: AI CPUs (2)" class="fig-sm" width="260" height="259" loading="lazy" decoding="async"><br><br>
     DT CPU: Finite State Machine + Decision Trees. A more advanced approach for optimal gameplay. Plays around timing, spacing and remaining health.
-    <img src="Images/IronReign/Picture10.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="180" height="200"><br><br>
+    <img src="Images/IronReign/Picture10.png" alt="Iron Reign: AI CPUs (3)" class="fig-sm" width="224" height="257" loading="lazy" decoding="async"><br><br>
     DT2.0 CPU: Same as DT CPU but it can pick up habits from opponents and adapt in those situations with the best counterattack.
-    <img src="Images/IronReign/Picture11.png" style="display:block; margin-top:10px; margin-left:15px; margin-bottom:10px; border-radius: 8px;" width="180" height="200"><br><br>
+    <img src="Images/IronReign/Picture11.png" alt="Iron Reign: AI CPUs (4)" class="fig-sm" width="226" height="259" loading="lazy" decoding="async"><br><br>
 
-    <div id="CPU States"></div>
-    <h3>CPU States</h3>
+    
+    <h3 id="cpu-states">CPU States</h3>
     All 4 CPUs use 4 different states:
     <ul>
         <li>Approach State</li>
@@ -204,8 +240,8 @@
     Defence State is by far the most complex state and the one that needed the most time to develop. Defence state includes proper blocking, movement and counterattacking which can be tricky to balance for gameplay.
     <br>Scrips are from DT2.0 CPU
 
-    <div id="Input Device/Controls"></div>
-    <h2>Input Device/Controls</h2>
+    
+    <h2 id="input-device-controls">Input Device/Controls</h2>
     Iron reign has many compatible input devices that were setup using Unity’s new input system.
     UI and Gameplay can be controlled with:
     <ul>
@@ -217,8 +253,8 @@
     Input Buffering is implemented for smoother gameplay and combo execution
 
 
-    <div id="Testing and Development"></div>
-    <h2>Testing and Development</h2>
+    
+    <h2 id="testing-and-development">Testing and Development</h2>
     To achieve this state of the game I followed these steps:
     <ul>
         <li>Make necessary sprites.</li>
@@ -233,8 +269,8 @@
     Also got feedback by people who have played my game and ideas that I could consider developing.<br><br>
     Version control was managed using GitHub. Used Unity Engine 2022.3.29 to match the version in the labs.
 
-    <div id="Critical Reflection"></div>
-    <h2>Critical Reflection</h2>
+    
+    <h2 id="critical-reflection">Critical Reflection</h2>
     All the goals were achieved and some exceeded:
     <ul>
         <li>Make a simple fighting game: Made extra mechanics to make the game more complex.</li>
@@ -246,8 +282,8 @@
         <li>Health System: Basic health system and added chip damage (on block damage)</li>
     </ul>
 
-    <div id="Conclusion/Potential Future Updates"></div>
-    <h2>Conclusion/Potential Future Updates</h2>
+    
+    <h2 id="conclusion-potential-future-updates">Conclusion/Potential Future Updates</h2>
     For the future of this game, I would add:
     <ul>
         <li>More character archetypes (ex. Rush-down, poking, zoners etc.). </li>
@@ -266,12 +302,15 @@
 
 
 
-        <a href="index.html" class="contact-btn">Back to main page</a>
+        <p class="back-link"><a class="btn btn--ghost" href="index.html#work">&larr; All projects</a></p>
     </section>
-</div>
+</main>
 
-<footer>
-    <p>&copy; 2026 Periklis Lazarides. All rights reserved.</p>
+<footer class="site-footer">
+    <div class="l-container">
+      <p>&copy; 2026 Periklis Lazarides</p>
+      <p><a href="index.html#contact">Contact</a></p>
+    </div>
   </footer>
 
   <script src="Scripts.js"></script>
