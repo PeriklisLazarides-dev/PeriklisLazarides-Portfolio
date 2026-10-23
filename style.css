@@ -702,6 +702,178 @@ a.card:hover .card__title { color: var(--color-accent-hi); }
 
 .back-link { margin-top: var(--space-7); }
 
+/* ---------- research write-up components (MSc_SDF.html) ---------- */
+
+.prose figure { margin: var(--space-5) 0 var(--space-6); }
+.prose figure img, .prose figure video { margin: 0; }
+
+.prose figcaption {
+  margin-top: var(--space-3);
+  max-width: var(--measure);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.prose figcaption b { color: var(--color-text-soft); font-weight: 600; }
+
+/* figures exported on white keep their white ground inside the dark frame */
+.prose .fig-paper { background: #fff; padding: var(--space-3); }
+
+/* side-by-side renders of different heights: same box, letterboxed */
+.gallery--renders img {
+  height: 320px;
+  object-fit: contain;
+  background: #fff;
+  padding: var(--space-3);
+}
+
+.gallery--renders figure { margin: 0; }
+.gallery--renders figcaption { text-align: center; margin-top: var(--space-2); }
+
+/* one-paragraph summary at the top of a write-up */
+.summary {
+  margin: 0 0 var(--space-6);
+  padding: var(--space-5) var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-md);
+}
+
+.summary .label { display: block; margin-bottom: var(--space-2); color: var(--color-accent); }
+.summary p { margin: 0; color: var(--color-text); max-width: none; }
+
+/* project facts: role, context, stack, links
+   (.prose prefix so the generic .prose dl reset can't strip the padding) */
+.prose .meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-4) var(--space-5);
+  margin: 0 0 var(--space-6);
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.meta-grid dt { margin-bottom: var(--space-1); }
+.meta-grid dd { margin: 0; font-size: var(--text-sm); color: var(--color-text); }
+
+/* headline numbers */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-5) 0 var(--space-6);
+}
+
+.stat {
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.stat b {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+.stat span { display: block; margin-top: var(--space-1); font-size: var(--text-sm); color: var(--color-text-muted); }
+
+/* results tables */
+.table-wrap {
+  overflow-x: auto;
+  margin: var(--space-4) 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.data-table th, .data-table td {
+  padding: var(--space-2) var(--space-4);
+  text-align: right;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.data-table th:first-child, .data-table td:first-child { text-align: left; }
+
+.data-table thead th {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+}
+
+.data-table td { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--color-text-soft); }
+.data-table td:first-child { font-family: var(--font-sans); color: var(--color-text); }
+.data-table tbody tr:last-child td { border-bottom: none; }
+.data-table .is-best { color: var(--color-text); font-weight: 600; }
+.data-table .group td {
+  background: var(--color-bg-sunk);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* code excerpts */
+.prose pre {
+  margin: var(--space-4) 0 var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  overflow-x: auto;
+  background: var(--color-bg-sunk);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--color-text-soft);
+  tab-size: 2;
+}
+
+.prose pre code { background: none; border: none; padding: 0; font-size: inherit; }
+.prose pre .c { color: var(--color-text-muted); }
+.prose pre .k { color: var(--color-accent-hi); }
+
+.code-title { margin: var(--space-5) 0 0; }
+.code-title + pre { margin-top: var(--space-2); }
+
+/* report download */
+.download {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  padding: var(--space-5) var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.download p { margin: 0; }
+.download strong { display: block; font-size: var(--text-lg); }
+.download .label { display: block; margin-top: var(--space-1); }
+
+.credit { margin-top: var(--space-6); text-transform: none; letter-spacing: 0; }
+
 /* ---------- back to top (injected by Scripts.js) ---------- */
 
 /* fills bottom-up with the accent as the page scrolls; --progress (0–1) is set by Scripts.js */
@@ -823,6 +995,8 @@ a.card:hover .card__title { color: var(--color-accent-hi); }
   .card__body { padding: var(--space-4); }
   .card-grid--featured .card__title { font-size: var(--text-lg); }
   .site-nav__brand span { font-size: var(--text-sm); }
+  .summary, .download, .prose .meta-grid { padding: var(--space-4); }
+  .gallery--renders img { height: 240px; }
 }
 
 /* ---------- touch: no hover lift ---------- */

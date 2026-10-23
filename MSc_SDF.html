@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neural SDFs for Mesh Reconstruction · Periklis Lazarides</title>
+  <meta name="description" content="MSc dissertation by Periklis Lazarides: a controlled comparison of SIREN and ReLU networks for sharp-feature preservation in neural signed distance field mesh reconstruction, evaluated with tail-sensitive metrics.">
+  <meta name="theme-color" content="#0e1014">
+  <link rel="canonical" href="https://periklislazarides-dev.github.io/PeriklisLazarides-Portfolio/MSc_SDF.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Neural SDFs for Mesh Reconstruction · Periklis Lazarides">
+  <meta property="og:description" content="SIREN vs ReLU under a matched compute budget: where neural SDFs lose sharp features, and why symmetric Chamfer distance can hide it.">
+  <meta property="og:url" content="https://periklislazarides-dev.github.io/PeriklisLazarides-Portfolio/MSc_SDF.html">
+  <meta property="og:image" content="https://periklislazarides-dev.github.io/PeriklisLazarides-Portfolio/Images/thumbs/neural-sdf.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="Images/gitprofile.png">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="l-container site-nav__inner">
+      <a class="site-nav__brand" href="index.html">
+        <img src="Images/gitprofile.png" alt="" width="28" height="28">
+        <span>Periklis Lazarides</span>
+      </a>
+      <ul class="site-nav__links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#mods">Mods</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="site-nav__social">
+        <a class="icon-link" href="https://github.com/PeriklisLazarides-dev" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/periklis-lazarides-33a573326/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+        <a class="icon-link" href="mailto:periklis.lazarides@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.4l10 6.25L22 6.4V6H2zm20 2.75-9.47 5.92a1 1 0 0 1-1.06 0L2 8.75V18h20V8.75z"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="l-container">
+      <p class="label breadcrumb"><a href="index.html#work">Projects</a> / <span aria-current="page">Neural SDFs</span></p>
+      <h1>Sharp-Feature Preservation in Neural Signed Distance Fields</h1>
+      <p class="page-hero__sub">MSc Artificial Intelligence dissertation · De Montfort University · 2026</p>
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#questions">Research questions</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#failures">Where it fails</a></li>
+        <li><a href="#metrics">The metric problem</a></li>
+        <li><a href="#debugging">Bugs that flipped the result</a></li>
+        <li><a href="#limitations">Limitations &amp; future work</a></li>
+        <li><a href="#report">Full report</a></li>
+      </ul>
+    </div>
+  </header>
+
+<main id="main" class="l-container prose">
+
+  <figure>
+    <img src="Images/SDF/error-front.png" class="fig-paper" width="1396" height="596"
+         alt="Front view of the test mesh coloured by reconstruction error for SIREN, ReLU at learning rate 1e-4 and ReLU at 1e-3. Most of the body is blue; the fingers and toes are red in all three.">
+    <figcaption><b>Distance from the ground-truth surface to each reconstruction.</b> Blue is zero error, red is 0.030 or more (normalised units). Left to right: SIREN at learning rate 1e-4, ReLU at 1e-4, ReLU at 1e-3.</figcaption>
+  </figure>
+
+  <!-- AWARD: add the best-dissertation prize here once it is confirmed. -->
+
+  <div class="summary">
+    <span class="label">In short</span>
+    <p>SIREN networks are widely said to reconstruct sharp detail better than ReLU networks, but published comparisons rarely change only the activation function. I built a reconstruction pipeline in which SIREN and a ReLU network share the same capacity, data, iteration count and extraction grid, and evaluated them with metrics that expose localised error. At the same learning rate SIREN halves the symmetric Chamfer distance and cuts its 99th-percentile accuracy error tenfold. Against a ReLU network at its better learning rate the two score within 0.08% on Chamfer distance, yet their 99th-percentile accuracy error differs 3.3×. Chamfer distance hides the gap because it adds two directed errors that here move in opposite directions and cancel.</p>
+  </div>
+
+  <dl class="meta-grid">
+    <div><dt class="label">Role</dt><dd>Solo research project</dd></div>
+    <div><dt class="label">Context</dt><dd>MSc AI dissertation, De Montfort University</dd></div>
+    <div><dt class="label">Timeline</dt><dd>Summer 2026</dd></div>
+    <div><dt class="label">Supervisor</dt><dd>Dr Conor Fahy</dd></div>
+    <div><dt class="label">Stack</dt><dd>Python · PyTorch · trimesh · scikit-image · SciPy</dd></div>
+    <div><dt class="label">Report</dt><dd><a href="#report">PDF, 46 pages</a></dd></div>
+  </dl>
+
+  <div class="stat-row">
+    <div class="stat"><b>2.0×</b><span>lower symmetric Chamfer distance for SIREN than ReLU at the same learning rate</span></div>
+    <div class="stat"><b>10×</b><span>lower 99th-percentile accuracy error for SIREN at the same learning rate</span></div>
+    <div class="stat"><b>0.08%</b><span>Chamfer gap to ReLU at its better rate, while 99th-percentile accuracy differs 3.3×</span></div>
+    <div class="stat"><b>198,657</b><span>parameters in each network, so the activation is the only variable</span></div>
+  </div>
+
+  <h2 id="overview">Overview</h2>
+  <p>Turning a point cloud or scan into a usable polygon mesh usually means fitting an implicit function and extracting its zero-level set with marching cubes. Classical methods such as screened Poisson reconstruction are fast and robust to noise, but they achieve that through a smoothness prior, and the same prior rounds off creases, corners and thin structures. This matters more now that virtualised geometry systems such as Nanite let assets carry far more detail than a frame rasterises: a crease lost during reconstruction cannot be recovered by any level-of-detail system downstream.</p>
+  <p>A neural signed distance field (SDF) learns its prior instead of imposing one. A small network maps a 3D position to the signed distance to the surface, and the result is meshed with marching cubes like any other field. Sitzmann et al. (2020) argued that the activation function decides how much high-frequency detail such a network can hold, and proposed SIREN, a network with sine activations, in place of ReLU. The claim is widely repeated but rarely tested with everything else held constant, and it is usually measured with a single mean error over the whole surface, which is insensitive to exactly the localised feature loss it is meant to show.</p>
+
+  <h2 id="questions">Research questions</h2>
+  <ul>
+    <li><b>RQ1.</b> Under a fixed compute budget, does a SIREN reconstruct sharp geometric features more accurately than a ReLU baseline?</li>
+    <li><b>RQ2.</b> Where does each architecture fail, and are the failures diffuse or concentrated in contiguous regions?</li>
+    <li><b>RQ3.</b> How informative are the standard reconstruction metrics for this question, and what does any disagreement between average and worst-case measures imply for how neural SDFs should be evaluated?</li>
+  </ul>
+
+  <h2 id="method">Method</h2>
+  <p>Every stage before training is shared, because both networks load the same cached sample set, and every stage after training is shared and deterministic. Any difference between the output meshes therefore comes from the fitted network.</p>
+
+  <figure>
+    <img src="Images/SDF/pipeline.png" class="fig-paper" width="1600" height="1112" loading="lazy" decoding="async"
+         alt="Pipeline diagram: source mesh, decimate and normalise, sample signed distances (200k near-surface plus 50k uniform), cached sample set, which feeds both a SIREN and a ReLU network; each is evaluated on a 256-cubed grid, meshed with marching cubes and compared against the ground truth.">
+    <figcaption><b>Reconstruction and evaluation pipeline.</b> Grey stages are shared by both architectures. The dashed path carries the normalised ground truth forward for comparison.</figcaption>
+  </figure>
+
+  <h3>Data</h3>
+  <p>The test object is a human base mesh, decimated to about 49,000 faces, made watertight so that inside/outside signs are well defined, and normalised to a bounding radius of 0.9. The training set has 250,000 point–distance pairs: 200,000 near the surface, displaced symmetrically by ±0.01 and ±0.05 so both sides of the surface are covered, and 50,000 uniformly in the volume so the network has no reason to create floating geometry in empty space. Signed distances come from an exact point-to-mesh query.</p>
+
+  <h3>Two networks, one variable</h3>
+  <p>Both networks are multilayer perceptrons with four hidden layers of 256 units, no positional encoding, and exactly 198,657 parameters. SIREN uses sine activations with ω₀ = 30 and the initialisation from the original paper; the baseline uses ReLU with Kaiming initialisation. Each gets the initialisation designed for its activation, because forcing one scheme on both would handicap whichever network it was not designed for.</p>
+
+  <p class="label code-title">SIREN layer · initialisation from Sitzmann et al. (2020)</p>
+<pre><code><span class="k">class</span> SineLayer(nn.Module):
+  <span class="k">def</span> __init__(self, in_f, out_f, is_first=False, omega_0=30.0):
+    super().__init__()
+    self.omega_0 = omega_0
+    self.linear = nn.Linear(in_f, out_f)
+    <span class="k">with</span> torch.no_grad():
+      <span class="k">if</span> is_first:
+        b = 1.0 / in_f
+      <span class="k">else</span>:
+        b = np.sqrt(6.0 / in_f) / omega_0   <span class="c"># keeps activations stable through depth</span>
+      self.linear.weight.uniform_(-b, b)
+
+  <span class="k">def</span> forward(self, x):
+    <span class="k">return</span> torch.sin(self.omega_0 * self.linear(x))</code></pre>
+
+  <p>I tested ω₀ = 45 and 60 during development. Both kept the overall shape but added high-frequency noise across surfaces that should be smooth, so I kept the published value of 30.</p>
+
+  <div class="gallery gallery--renders">
+    <figure>
+      <img src="Images/SDF/omega-30.png" width="475" height="569" loading="lazy" decoding="async" alt="SIREN reconstruction at omega_0 = 30: a clean, smooth body.">
+      <figcaption>ω₀ = 30</figcaption>
+    </figure>
+    <figure>
+      <img src="Images/SDF/omega-45.png" width="416" height="744" loading="lazy" decoding="async" alt="SIREN reconstruction at omega_0 = 45: the same body with a bumpy, noisy surface.">
+      <figcaption>ω₀ = 45</figcaption>
+    </figure>
+    <figure>
+      <img src="Images/SDF/omega-60.png" width="362" height="629" loading="lazy" decoding="async" alt="SIREN reconstruction at omega_0 = 60: the body covered in heavy high-frequency noise.">
+      <figcaption>ω₀ = 60</figcaption>
+    </figure>
+  </div>
+
+  <h3>Matched training budget</h3>
+  <p>Both networks regress the signed distance with an L1 loss on targets truncated to ±0.1, following DeepSDF, so capacity is spent near the surface that marching cubes actually reads. Training uses Adam, batch size 256 and 5,000 iterations on identical batches, with a fixed seed and no schedule, weight decay, clipping or early stopping, since each of those would add a setting that might favour one architecture.</p>
+  <p>The learning rate turned out to be the hard part. At 1e-3, which is conventional for a ReLU network of this size, SIREN never converges: its loss stalls around 0.03 and the field it produces cannot be meshed. I therefore ran both networks at 1e-4, and also ran the ReLU baseline at 1e-3, its better rate, so the comparison is reported both ways. A likely cause is weight scale: SIREN's hidden weights start around ±0.005 against roughly 0.09 for the ReLU network, so an Adam step of 1e-3 changes a SIREN weight by about 40%. I didn't instrument update sizes, so this remains a hypothesis.</p>
+
+  <h3>Surface extraction and evaluation</h3>
+  <p>Each network is evaluated on a 256³ grid (16.8 million queries, grid spacing 0.00784) and meshed with marching cubes. On CPU, training takes 56–72 seconds per network and extraction 224–290 seconds, so extraction costs 3–5× as much as training. Each reconstruction is compared with the ground truth using 200,000 seeded surface samples. I report the two directions of error separately: <b>accuracy</b> (how far reconstructed points are from the real surface, i.e. invented geometry) and <b>completeness</b> (how far real points are from the reconstruction, i.e. missing geometry). Each is reported at the median, 90th and 99th percentiles and the maximum, alongside symmetric Chamfer-L1, normal consistency, and the fraction of surface left uncovered across ten tolerances.</p>
+
+  <h2 id="results">Results</h2>
+  <p>All three configurations converged. Distances are in normalised units, where the mesh has a bounding radius of 0.9. The lowest error in each row is highlighted (highest for normal consistency).</p>
+
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr><th scope="col">Metric</th><th scope="col">SIREN 1e-4</th><th scope="col">ReLU 1e-4</th><th scope="col">ReLU 1e-3</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Symmetric Chamfer-L1</td><td class="is-best">0.008395</td><td>0.016943</td><td>0.008402</td></tr>
+        <tr><td>Normal consistency</td><td class="is-best">0.9812</td><td>0.8881</td><td>0.9620</td></tr>
+        <tr><td>Final training L1</td><td class="is-best">0.00258</td><td>0.00394</td><td>0.00275</td></tr>
+        <tr class="group"><td colspan="4">Accuracy (invented geometry)</td></tr>
+        <tr><td>Mean</td><td class="is-best">0.003765</td><td>0.011202</td><td>0.004288</td></tr>
+        <tr><td>Median</td><td>0.003130</td><td>0.003097</td><td class="is-best">0.002775</td></tr>
+        <tr><td>90th percentile</td><td>0.006949</td><td>0.023261</td><td class="is-best">0.006782</td></tr>
+        <tr><td>99th percentile</td><td class="is-best">0.012050</td><td>0.121113</td><td>0.039787</td></tr>
+        <tr><td>Maximum</td><td class="is-best">0.018979</td><td>0.141698</td><td>0.059760</td></tr>
+        <tr class="group"><td colspan="4">Completeness (missing geometry)</td></tr>
+        <tr><td>Mean</td><td>0.004630</td><td>0.005741</td><td class="is-best">0.004115</td></tr>
+        <tr><td>Median</td><td>0.003208</td><td>0.003035</td><td class="is-best">0.002805</td></tr>
+        <tr><td>90th percentile</td><td>0.007729</td><td>0.012284</td><td class="is-best">0.007380</td></tr>
+        <tr><td>99th percentile</td><td>0.040389</td><td>0.047501</td><td class="is-best">0.026629</td></tr>
+        <tr><td>Maximum</td><td>0.099631</td><td>0.099202</td><td class="is-best">0.055729</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p><b>At the same learning rate the answer is yes.</b> SIREN halves the Chamfer distance and its 99th-percentile accuracy error is about 10× lower. The median errors are almost identical, so the ReLU network fits most of the surface just as well and fails badly on a small part of it, with a maximum error of 15.7% of the bounding radius against SIREN's 2.1%.</p>
+  <p><b>Against ReLU at its better rate the result is mixed.</b> SIREN invents almost no geometry: nothing it produces strays more than 2.1% of the bounding radius from the true surface, and it has the best normal consistency. The ReLU network is better at the typical point and misses less of the surface at every completeness percentile. The two are wrong in opposite directions.</p>
+
+  <figure>
+    <img src="Images/SDF/uncovered-fraction.png" class="fig-paper" width="1400" height="904" loading="lazy" decoding="async"
+         alt="Log-log plot of uncovered ground-truth surface percentage against tolerance from 0.002 to 0.03 for the three configurations. The SIREN and ReLU 1e-3 curves cross near the grid spacing of 0.00784 and again between 0.02 and 0.03; ReLU 1e-4 is worst above 0.005.">
+    <figcaption><b>Surface left uncovered as a function of tolerance τ.</b> The dotted line marks the marching-cubes grid spacing. SIREN and ReLU at 1e-3 swap places twice, so ranking them at any single tolerance would depend on which tolerance the author picked.</figcaption>
+  </figure>
+
+  <h2 id="failures">Where it fails</h2>
+  <p>At a tolerance of 0.010, the vertices each reconstruction misses form 35 to 39 connected regions in every configuration, and the five largest regions hold 58–65% of all missed vertices. These are contiguous patches, not scattered noise. They sit on surface with about 2.2× the curvature of the rest of the body, and that ratio varies by less than 7% between configurations.</p>
+
+  <figure>
+    <img src="Images/SDF/error-three-quarter.png" class="fig-paper" width="1396" height="596" loading="lazy" decoding="async"
+         alt="Three-quarter view of the error heatmaps for the three configurations. The ReLU reconstructions show red on the soles and toes; SIREN's feet are mostly blue.">
+    <figcaption><b>Three-quarter view.</b> SIREN recovers the feet and toes far better; both ReLU configurations lose the toes almost entirely.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="Images/SDF/error-rear.png" class="fig-paper" width="1394" height="594" loading="lazy" decoding="async"
+         alt="Rear view of the error heatmaps. ReLU at 1e-4 shows a red patch at the back of the head and neck; the fingers are red in all three.">
+    <figcaption><b>Rear view.</b> ReLU at 1e-4 adds a large failure region around the neck and shoulders. SIREN shows mild, spread-out error across the hips and thighs, where both ReLU runs stay within tolerance.</figcaption>
+  </figure>
+
+  <p>The same places fail in every run (fingers, toes and outer ears), so the activation function changes how badly the pipeline fails there but not where. That points at what all the runs share: a grid spacing only slightly finer than a finger, area-uniform sampling that gives thin extremities the fewest samples, and the medial-axis ridges in the distance field between surfaces that sit close together. On this evidence the bigger levers for feature preservation are the sampling and extraction stages; the choice of nonlinearity is a second-order effect.</p>
+
+  <h2 id="metrics">The metric problem</h2>
+  <p>The most useful finding is about measurement. Symmetric Chamfer distance is the sum of the mean accuracy and mean completeness errors. For SIREN that is 0.003765 + 0.004630 = 0.008395, and for ReLU at 1e-3 it is 0.004288 + 0.004115 = 0.008402. SIREN is 12.2% better on one term and 12.5% worse on the other, the differences cancel, and a study that reported only Chamfer distance would have concluded the activation function makes no difference here.</p>
+  <p>That leads to a cheap minimum standard for anyone claiming feature preservation:</p>
+  <ul>
+    <li>report the two directed errors separately, not only their sum;</li>
+    <li>report at least one tail percentile next to the mean;</li>
+    <li>report coverage across a range of tolerances, with the grid spacing marked, rather than at one chosen threshold.</li>
+  </ul>
+
+  <h2 id="debugging">Bugs that flipped the result</h2>
+  <p>Three defects each invalidated the runs made before they were fixed, and fixing them reversed the headline result. In the earliest runs the ReLU network led on Chamfer distance.</p>
+  <ul>
+    <li><b>Different training data.</b> The two scripts sampled points independently, and the baseline's near-surface offsets pushed points inward instead of spreading them evenly about the surface. Fixed with one seeded, cached sample set loaded by both.</li>
+    <li><b>Unequal sample counts.</b> The baseline held out 5% of the samples and SIREN did not, so they trained on 237,500 and 250,000 points.</li>
+    <li><b>A silent gradient bug.</b> The loss clamped the prediction as well as the target. Outside ±0.1 the clamp has zero gradient, so a network whose outputs drifted stopped learning entirely while the loss curve still looked plausible. It surfaced only when marching cubes failed on a field with no zero crossing.</li>
+  </ul>
+
+  <p class="label code-title">Training step · clamp the target, never the prediction</p>
+<pre><code>gt = torch.from_numpy(sdf).clamp(-cfg[<span class="k">"clamp"</span>], cfg[<span class="k">"clamp"</span>]).to(device)
+
+<span class="k">for</span> it <span class="k">in</span> range(cfg[<span class="k">"iters"</span>]):
+  idx = torch.randint(0, n, (cfg[<span class="k">"batch_size"</span>],), device=device)
+  pred = model(pts[idx])                 <span class="c"># unclamped, so the gradient always flows</span>
+  loss = (pred - gt[idx]).abs().mean()</code></pre>
+
+  <p class="label code-title">Extraction guard added after the bug</p>
+<pre><code><span class="k">if not</span> (volume.min() &lt; 0.0 &lt; volume.max()):
+  <span class="k">raise</span> RuntimeError(<span class="k">"no zero crossing — network did not learn a signed field"</span>)</code></pre>
+
+  <p>Two of the three trace back to maintaining two training scripts instead of one parameterised entry point. Three cheap checks would have caught every defect: an assertion on the mean displacement of near-surface samples, a logged fraction of predictions outside the clamp band, and a logged gradient norm.</p>
+
+  <h2 id="limitations">Limitations &amp; future work</h2>
+  <ul>
+    <li>One mesh, one seed, no repeats, so small differences (including the 0.08% Chamfer gap) cannot be separated from noise.</li>
+    <li>The test mesh is organic. Its hard regions are thin extremities, not the creases and corners of CAD parts, so no claim is made about those.</li>
+    <li>The 256³ grid limits detail near the fingers and toes; a 512³ run would separate grid limits from network error.</li>
+    <li>The ReLU baseline has no positional encoding, so it is the plainest reasonable ReLU network rather than the strongest available alternative.</li>
+    <li>Truncated targets mean neither network learns a valid distance field away from the surface, which rules out sphere tracing.</li>
+  </ul>
+  <p>Next steps: repeats across seeds, a CAD test set, extraction at 512³, a screened Poisson baseline, a sweep over ω₀, and a hash-grid encoding as a third architecture to test whether detail is better obtained from the activation function or from the input representation.</p>
+
+  <section aria-labelledby="architecture-tests">
+    <h3 id="architecture-tests">Appendix: architecture tests</h3>
+    <p>Before building the ReLU baseline I tried wider and deeper SIREN variants informally, then kept the smallest configuration (4 hidden layers of 256) for the comparison.</p>
+    <div class="gallery gallery--renders">
+      <figure>
+        <img src="Images/SDF/siren-6-layers.png" width="354" height="722" loading="lazy" decoding="async" alt="SIREN with six hidden layers: a smooth body with a slightly rough surface.">
+        <figcaption>6 hidden layers</figcaption>
+      </figure>
+      <figure>
+        <img src="Images/SDF/siren-512-width.png" width="424" height="744" loading="lazy" decoding="async" alt="SIREN with width 512: a body with a heavily noisy surface.">
+        <figcaption>Width 512</figcaption>
+      </figure>
+      <figure>
+        <img src="Images/SDF/siren-512-width-6-layers.png" width="588" height="678" loading="lazy" decoding="async" alt="SIREN with width 512 and six layers: a broken reconstruction with scattered floating fragments.">
+        <figcaption>Width 512, 6 layers</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <h2 id="report">Full report</h2>
+  <p>The dissertation covers the literature review, the full hyperparameter tables, the computational cost of each stage and the complete discussion.</p>
+  <div class="download">
+    <p>
+      <strong>Sharp-Feature Preservation in Neural Signed Distance Fields under a Fixed Compute Budget</strong>
+      <span class="label">MSc dissertation · PDF · 46 pages · 1.1 MB</span>
+    </p>
+    <a class="btn btn--primary" href="Docs/Lazarides_MSc_Dissertation_Neural_SDF.pdf" download>Download report</a>
+  </div>
+
+  <p class="label credit">Test mesh: “Male Base Mesh” by nixor, credited to Paul Chen, Free3D, Personal Use License.</p>
+
+  <p class="back-link"><a class="btn btn--ghost" href="index.html#work">&larr; All projects</a></p>
+</main>
+
+  <footer class="site-footer">
+    <div class="l-container">
+      <p>&copy; 2026 Periklis Lazarides</p>
+      <p><a href="index.html#contact">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="Scripts.js"></script>
+</body>
+</html>
