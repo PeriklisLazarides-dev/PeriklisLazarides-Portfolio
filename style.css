@@ -261,6 +261,7 @@ code, kbd, samp {
 }
 
 .hero__status span { min-width: 0; }
+.hero__status b { color: var(--color-award); }
 
 /* ---------- viewport frame (hero media, page hero media) ---------- */
 

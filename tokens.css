@@ -25,6 +25,7 @@
   --red-500: #e11d2e;
 
   --amber-400: #e8b04a;
+  --gold-300:  #f6c453;
 
   /* ---------- semantic: colour ---------- */
   --color-bg:          var(--gray-900);
@@ -44,6 +45,7 @@
   --color-on-accent:   var(--gray-900);  /*  6.27:1 on accent */
 
   --color-warn:        var(--amber-400); /*  8.93:1, WIP status */
+  --color-award:       var(--gold-300);  /* ~11:1, prizes and awards */
 
   /* ---------- semantic: type ---------- */
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
