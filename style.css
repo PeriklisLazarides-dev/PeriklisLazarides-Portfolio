@@ -237,12 +237,15 @@ code, kbd, samp {
   max-width: 34ch;
 }
 
+/* status dot + one text span; keep the text in a single child so inline
+   markup (<b>) flows with it instead of becoming separate flex items */
 .hero__status {
   display: flex;
-  align-items: center;
-  gap: var(--space-2);
+  align-items: flex-start;
+  gap: var(--space-3);
   margin: var(--space-5) 0 0;
   font-size: var(--text-sm);
+  line-height: 1.6;
   color: var(--color-text);
 }
 
@@ -250,11 +253,14 @@ code, kbd, samp {
   content: "";
   width: 8px;
   height: 8px;
+  margin-top: .5em;   /* centre on the first line of text */
   border-radius: 50%;
   background: var(--color-accent);
   box-shadow: 0 0 0 4px var(--color-accent-soft);
   flex: none;
 }
+
+.hero__status span { min-width: 0; }
 
 /* ---------- viewport frame (hero media, page hero media) ---------- */
 
