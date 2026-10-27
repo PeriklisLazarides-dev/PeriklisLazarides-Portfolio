@@ -111,11 +111,12 @@
     });
   }
 
-  /* ---------- mark the nav link for the section you are reading ---------- */
+  /* ---------- mark the nav link for the section you are reading ----------
+     The current section is the last one whose top has scrolled above a line
+     40% down the viewport. Short sections at the end of the page (Contact)
+     can never reach that line, so at the very bottom the last section wins. */
 
   function setupNavHighlight() {
-    if (!("IntersectionObserver" in window)) return;
-
     var links = document.querySelectorAll('.site-nav__links a[href^="#"]');
     var map = {};
     var sections = [];
@@ -129,38 +130,35 @@
 
     if (!sections.length) return;
 
-    var visible = [];
+    var activeId = null;
 
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        var i = visible.indexOf(entry.target);
-        if (entry.isIntersecting) {
-          if (i === -1) visible.push(entry.target);
-        } else if (i !== -1) {
-          visible.splice(i, 1);
-        }
-      });
-
+    function setActive(id) {
+      if (id === activeId) return;
+      activeId = id;
       Array.prototype.forEach.call(links, function (l) {
-        l.classList.remove("is-active");
-        l.removeAttribute("aria-current");
+        var on = map[id] === l;
+        l.classList.toggle("is-active", on);
+        if (on) l.setAttribute("aria-current", "location");
+        else l.removeAttribute("aria-current");
       });
+    }
 
-      if (!visible.length) return;
+    onScroll(function () {
+      var doc = document.documentElement;
+      var atBottom = window.innerHeight + window.scrollY >= doc.scrollHeight - 2;
 
-      // topmost visible section wins
-      var current = visible.reduce(function (a, b) {
-        return a.getBoundingClientRect().top < b.getBoundingClientRect().top ? a : b;
-      });
-
-      var link = map[current.id];
-      if (link) {
-        link.classList.add("is-active");
-        link.setAttribute("aria-current", "location");
+      if (atBottom) {
+        setActive(sections[sections.length - 1].id);
+        return;
       }
-    }, { rootMargin: "-40% 0px -55% 0px" });
 
-    sections.forEach(function (s) { observer.observe(s); });
+      var line = window.innerHeight * 0.4;
+      var current = null;
+      sections.forEach(function (s) {
+        if (s.getBoundingClientRect().top <= line) current = s;
+      });
+      setActive(current ? current.id : null);   // still in the hero: nothing active
+    });
   }
 
   /* ---------- helper: throttle scroll work to animation frames ---------- */

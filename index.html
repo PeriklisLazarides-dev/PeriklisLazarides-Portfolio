@@ -55,7 +55,7 @@
         <h1>Periklis Lazarides</h1>
         <p class="label hero__role">Graphics, Rendering Programmer &amp; Game Developer</p>
         <p class="hero__pitch">I build real-time renderers in Vulkan and C++, and study how neural networks represent 3D geometry.</p>
-        <p class="hero__status"><span>MSc Artificial Intelligence · <b>Best Dissertation Award, DMU 2026</b> · open to graphics, game development roles and PhD positions in neural rendering</span></p>
+        <p class="hero__status"><b>Best Dissertation Award, DMU 2026</b> · MSc Artificial Intelligence · open to graphics, game development roles and PhD positions in neural rendering</p>
       </div>
 
       <figure class="viewport">
@@ -86,21 +86,6 @@
 
         <div class="card-grid card-grid--featured">
 
-          <a class="card" href="Vulkan.html">
-            <div class="card__media">
-              <img src="Images/thumbs/vulkan-renderer.jpg" width="1600" height="814" loading="lazy" decoding="async"
-                   alt="Vulkan renderer scene with ImGui panels">
-            </div>
-            <div class="card__body">
-              <h3 class="card__title">Vulkan Renderer</h3>
-              <p class="card__text">A renderer written from scratch on Vulkan 1.3: dynamic rendering, bindless textures, compute post-processing, shadow mapping with PCF, and my own entity component system driven from ImGui.</p>
-              <ul class="chips" aria-label="Technologies">
-                <li class="chip">Vulkan 1.3</li><li class="chip">C++</li><li class="chip">GLSL</li><li class="chip">ImGui</li>
-              </ul>
-              <span class="label card__meta">Solo · Personal project · ongoing</span>
-            </div>
-          </a>
-
           <a class="card" href="MSc_SDF.html">
             <div class="card__media">
               <img src="Images/thumbs/neural-sdf.jpg" width="1200" height="516" loading="lazy" decoding="async"
@@ -117,6 +102,21 @@
                 <li class="chip">Python</li><li class="chip">PyTorch</li><li class="chip">Neural SDF</li><li class="chip">SIREN</li>
               </ul>
               <span class="label card__meta">Solo · MSc dissertation</span>
+            </div>
+          </a>
+
+          <a class="card" href="Vulkan.html">
+            <div class="card__media">
+              <img src="Images/thumbs/vulkan-renderer.jpg" width="1600" height="814" loading="lazy" decoding="async"
+                   alt="Vulkan renderer scene with ImGui panels">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Vulkan Renderer</h3>
+              <p class="card__text">A renderer written from scratch on Vulkan 1.3: dynamic rendering, bindless textures, compute post-processing, shadow mapping with PCF, and my own entity component system driven from ImGui.</p>
+              <ul class="chips" aria-label="Technologies">
+                <li class="chip">Vulkan 1.3</li><li class="chip">C++</li><li class="chip">GLSL</li><li class="chip">ImGui</li>
+              </ul>
+              <span class="label card__meta">Solo · Personal project · ongoing</span>
             </div>
           </a>
 
@@ -281,32 +281,67 @@
         <div class="section__head">
           <h2 id="skills-title">Technical skills</h2>
         </div>
+        <!-- Grouped like a competencies list; each skill links to the project that shows it.
+             Versions only where a project page confirms them. -->
         <div class="skills">
-          <div class="skill-row">
-            <h3>Graphics</h3>
+
+          <div class="skill-group">
+            <h3 class="skill-group__title">Graphics &amp; rendering</h3>
             <ul class="skill-list">
-              <li>Vulkan</li><li>OpenGL</li><li>GLSL</li><li>Compute shaders</li>
-              <li>Shadow mapping</li><li>Deferred rendering</li><li>Tessellation</li><li>Ray tracing</li>
+              <li class="skill"><span class="skill__name">Vulkan <span class="skill__ver">1.3</span></span><span class="skill__proof"><a href="Vulkan.html">Vulkan Renderer</a></span></li>
+              <li class="skill"><span class="skill__name">OpenGL &amp; GLSL</span><span class="skill__proof"><a href="Shader_Programming.html">Shader Programming</a></span></li>
+              <li class="skill"><span class="skill__name">Compute shaders</span><span class="skill__proof"><a href="Vulkan.html">Vulkan</a> · <a href="Shader_Programming.html">Shaders</a></span></li>
+              <li class="skill"><span class="skill__name">Shadow mapping, PCF</span><span class="skill__proof"><a href="Vulkan.html">Vulkan Renderer</a></span></li>
+              <li class="skill"><span class="skill__name">Deferred rendering</span><span class="skill__proof"><a href="Shader_Programming.html">Shader Programming</a></span></li>
+              <li class="skill"><span class="skill__name">Tessellation &amp; geometry shaders</span><span class="skill__proof"><a href="Shader_Programming.html">Shader Programming</a></span></li>
+              <li class="skill"><span class="skill__name">Ray tracing</span><span class="skill__proof"><a href="RayTracer.html">Ray Tracer</a></span></li>
+              <li class="skill"><span class="skill__name">Marching cubes, SDFs</span><span class="skill__proof"><a href="MSc_SDF.html">MSc dissertation</a></span></li>
             </ul>
           </div>
-          <div class="skill-row">
-            <h3>Languages</h3>
+
+          <div class="skill-group">
+            <h3 class="skill-group__title">Languages</h3>
             <ul class="skill-list">
-              <li>C++</li><li>C#</li><li>Python</li><li>GLSL</li><li>Lua</li><li>JavaScript</li>
+              <li class="skill"><span class="skill__name">C++</span><span class="skill__proof"><a href="Vulkan.html">Vulkan</a> · <a href="RayTracer.html">Ray Tracer</a> · <a href="DeadAim.html">Dead Aim</a></span></li>
+              <li class="skill"><span class="skill__name">GLSL</span><span class="skill__proof"><a href="Vulkan.html">Vulkan</a> · <a href="Shader_Programming.html">Shaders</a></span></li>
+              <li class="skill"><span class="skill__name">Python <span class="skill__ver">3.13</span></span><span class="skill__proof"><a href="MSc_SDF.html">MSc dissertation</a></span></li>
+              <li class="skill"><span class="skill__name">C#</span><span class="skill__proof"><a href="IronReign.html">Iron Reign</a> · <a href="BlindGoalKeeper.html">CYENS</a></span></li>
+              <li class="skill"><span class="skill__name">Lua</span><span class="skill__proof"><a href="#mods">Game mods</a></span></li>
+              <li class="skill"><span class="skill__name">JavaScript</span></li>
             </ul>
           </div>
-          <div class="skill-row">
-            <h3>Engines &amp; ML</h3>
+
+          <div class="skill-group">
+            <h3 class="skill-group__title">Machine learning</h3>
             <ul class="skill-list">
-              <li>Unity</li><li>Unreal Engine 5</li><li>Neural SDFs</li><li>Keras</li><li>AI behaviour</li>
+              <li class="skill"><span class="skill__name">PyTorch <span class="skill__ver">2.11</span></span><span class="skill__proof"><a href="MSc_SDF.html">MSc dissertation</a></span></li>
+              <li class="skill"><span class="skill__name">Neural SDFs, SIREN</span><span class="skill__proof"><a href="MSc_SDF.html">MSc dissertation</a></span></li>
+              <li class="skill"><span class="skill__name">Keras · ANN, CNN</span><span class="skill__proof"><a href="ANNCNN.html">Classification</a></span></li>
             </ul>
           </div>
-          <div class="skill-row">
-            <h3>Tools</h3>
+
+          <div class="skill-group">
+            <h3 class="skill-group__title">Engines &amp; gameplay</h3>
             <ul class="skill-list">
-              <li>RenderDoc</li><li>CMake</li><li>Git / GitHub</li><li>ImGui</li><li>Profiling</li>
+              <li class="skill"><span class="skill__name">Unity <span class="skill__ver">2022.3 · 6</span></span><span class="skill__proof"><a href="IronReign.html">Iron Reign</a> · <a href="VRGuide.html">NPC Guide</a></span></li>
+              <li class="skill"><span class="skill__name">Unreal Engine <span class="skill__ver">5</span></span><span class="skill__proof"><a href="DeadAim.html">Dead Aim</a></span></li>
+              <li class="skill"><span class="skill__name">AI: FSM, fuzzy logic, decision trees</span><span class="skill__proof"><a href="IronReign.html">Iron Reign</a></span></li>
+              <li class="skill"><span class="skill__name">Multiplayer (Steam)</span><span class="skill__proof"><a href="DeadAim.html">Dead Aim</a></span></li>
+              <li class="skill"><span class="skill__name">VR</span><span class="skill__proof"><a href="BlindGoalKeeper.html">Blind Goalkeeper</a></span></li>
             </ul>
           </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group__title">Tools</h3>
+            <ul class="skill-list">
+              <li class="skill"><span class="skill__name">RenderDoc</span><span class="skill__proof"><a href="Vulkan.html">Vulkan Renderer</a></span></li>
+              <li class="skill"><span class="skill__name">CMake</span><span class="skill__proof"><a href="Vulkan.html">Vulkan Renderer</a></span></li>
+              <li class="skill"><span class="skill__name">Dear ImGui</span><span class="skill__proof"><a href="Vulkan.html">Vulkan Renderer</a></span></li>
+              <li class="skill"><span class="skill__name">Git / GitHub</span></li>
+              <li class="skill"><span class="skill__name">Debugging &amp; profiling</span></li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
